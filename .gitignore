@@ -1,0 +1,85 @@
+# ========================================
+# 📦 Build output (Visual Studio C++ / MSVC)
+# ========================================
+Debug/
+Release/
+x64/
+x86/
+ARM/
+ARM64/
+out/
+build/
+bin/
+obj/
+
+# Ignore generated files like .exe, .dll, .pdb, .lib, etc.
+*.exe
+*.dll
+*.pdb
+*.ilk
+*.lib
+*.exp
+*.idb
+*.iobj
+*.ipdb
+
+# ========================================
+# 🛠️ Visual Studio user/machine-specific files
+# ========================================
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ========================================
+# 🔧 Visual Studio cache files
+# ========================================
+*.cache
+*.db
+*.opendb
+
+# ========================================
+# 🔐 Environment files
+# ========================================
+.env
+.env.*
+
+# ========================================
+# 📦 NuGet (rare for C++, but safe to keep)
+# ========================================
+packages/
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+
+# ========================================
+# 📄 OS-specific junk files
+# ========================================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ========================================
+# 🧪 Test Results
+# ========================================
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# ========================================
+# 🔧 JetBrains Rider / CLion
+# ========================================
+.idea/
+
+# ========================================
+# 🧰 Others
+# ========================================
+*.bak
+*.tmp
+*.log
+[Ll]og/
+[Ll]ogs/
