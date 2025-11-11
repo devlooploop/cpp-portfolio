@@ -1,6 +1,6 @@
 # C++ Portfolio
 
-A personal portfolio of C++ development work, including practice exercises, data-structure implementations, OOP concepts, and real projects. Organized for readability and easy navigation. Updated regularly as I improve my skills.
+A personal portfolio of C++ development work, including practice exercises, data-structure implementations, OOP concepts, and real projects. Organized for readability and easy navigation. Updated regularly as I progress.
 
 ## 📁 Repository Structure
 ```
