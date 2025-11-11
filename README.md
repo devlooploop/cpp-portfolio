@@ -3,13 +3,13 @@
 A personal portfolio of C++ development work, including practice exercises, data-structure implementations, OOP concepts, and real projects. Organized for readability and easy navigation. Updated regularly as I improve my skills.
 
 ## 📁 Repository Structure
-
+```
 cpp-portfolio/
 ├─ projects/         # Full applications (systems, tools, games)
 ├─ exercises/        # Small practice programs
 ├─ data-structures/  # Linked lists, stacks, queues, searching, etc.
 └─ README.md
-
+```
 
 ## ✅ What's Included
 
