@@ -6,32 +6,33 @@
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-A personal portfolio of C++ development work, including practice exercises, data-structure implementations, OOP concepts, and real projects.  
-Organized for readability and easy navigation. Updated regularly as I progress.
+A C++ repository covering fundamentals, object-oriented design, data structures, algorithms, and real applications.  
+Organized for clarity and continuous improvement.
 
 ---
 
 ## 📁 Repository Structure
 
-```
 cpp-portfolio/
 ├─ CPP_I/
-│  ├─ projects/         # Full applications (systems, tools, games)
-│  ├─ exercises/        # Small practice programs
-│  ├─ data-structures/  # Linked lists, stacks, queues, searching, etc.
+│ ├─ exercises/ # Small practice programs (loops, conditions, functions, etc.)
+│
+├─ CPP_II/ # More advanced concepts (coming soon)
+│
+├─ projects/ # Larger programs (planned)
+│
 └─ README.md
-```
 
 ---
 
 ## ✅ What's Included
 
 - **cpp-portfolio/** — Root of the repository  
-- **CPP_I/** — Contains three main subfolders:
-
-  - **projects/** – Complete applications and larger programs  
-  - **exercises/** – Small practice tasks and basic programs  
-  - **data-structures/** – Implementations of fundamental data structures  
+- **CPP_I/** — Fundamental C++ topics and practice  
+  - **exercises/** — Small practice programs (loops, conditions, functions, etc.)
+- **CPP_II/** — Advanced C++ concepts *(coming soon)*  
+- **projects/** — Larger, more applied programs *(planned)*  
+- **README.md** — Repository overview and documentation  
 
 ---
 
@@ -42,15 +43,12 @@ cpp-portfolio/
 g++ filename.cpp -o program
 ./program
 ```
-
 ### **Using Visual Studio (Windows):**
-- Open the `.sln` file inside a project folder  
-- Build → Run the project normally  
+- Open the .sln file inside the project folder
+- Build → Run the project normally
 
 ---
-
 ## 📜 License
 
-This project is released under the **MIT License**.  
-See the `LICENSE` file for more details.
-
+This project is released under the **MIT License**.
+See the LICENSE file for more details.
