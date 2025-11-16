@@ -83,3 +83,4 @@ TestResults/
 *.log
 [Ll]og/
 [Ll]ogs/
+test.cpp
