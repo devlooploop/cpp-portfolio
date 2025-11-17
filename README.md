@@ -7,9 +7,7 @@ Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91?style=flat&logo=visu
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-A C++ repository covering fundamentals, object-oriented design, data
-structures, algorithms, and real applications.\
-Organized for clarity and continuous improvement.
+C++ fundamentals, real applications, and hands-on projects — organized for clarity and growth.
 
 ------------------------------------------------------------------------
 
@@ -19,9 +17,7 @@ Organized for clarity and continuous improvement.
     ├─ CPP_I/
     │  ├─ exercises/        # Small practice programs (loops, conditions, functions, etc.)
     │
-    ├─ CPP_II/              # More advanced concepts (coming soon)
-    │
-    ├─ projects/            # Larger programs (planned)
+    ├─ projects/            # Larger real-world C++ projects (current & planned)
     │
     └─ README.md
 
@@ -33,8 +29,7 @@ Organized for clarity and continuous improvement.
 -   **CPP_I/** --- Fundamental C++ topics and practice
     -   **exercises/** --- Small practice programs (loops, conditions,
         functions, etc.)
--   **CPP_II/** --- Advanced C++ concepts *(coming soon)*\
--   **projects/** --- Larger, more applied programs *(planned)*\
+-   **projects/** --- Larger, real-world C++ applications *(planned)*\
 -   **README.md** --- Repository overview and documentation
 
 ------------------------------------------------------------------------
