@@ -13,7 +13,6 @@ A collection of C++ projects.
 ## 📁 Repository Structure
 
 CPP-Projects/
-│
 ├── 01-Rock-Paper-Scissors/
 │   ├── RockPaperScissors.cpp
 │   └── README.md
