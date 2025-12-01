@@ -13,13 +13,11 @@ C++ fundamentals, real applications, and hands-on projects — organized for cla
 
 ## 📁 Repository Structure
 
-    cpp-portfolio/
-    ├─ CPP_I/
-    │  ├─ exercises/        # Small practice programs (loops, conditions, functions, etc.)
-    │
-    ├─ projects/            # Larger real-world C++ projects (current & planned)
-    │
-    └─ README.md
+    CPP-Projects/
+│
+├── 01-Stone-Paper-Scissors/
+├── README.md
+└── .gitignore
 
 ------------------------------------------------------------------------
 
