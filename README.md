@@ -12,14 +12,15 @@ A collection of C++ projects.
 ------------------------------------------------------------------------
 ## 📁 Repository Structure
 
-&#96;&#96;
+&#96;&#96;&#96;
 CPP-Projects/
 ├── 01-Rock-Paper-Scissors/
 │ ├── RockPaperScissors.cpp
 │ └── README.md
 ├── README.md
 └── .gitignore
-&#96;&#96;
+&#96;&#96;&#96;
+
 ------------------------------------------------------------------------
 
 ## 🚀 Featured Project
