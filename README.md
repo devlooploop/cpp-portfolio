@@ -7,28 +7,33 @@ Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91?style=flat&logo=visu
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-C++ fundamentals, real applications, and hands-on projects — organized for clarity and growth.
+A collection of C++ projects.
 
 ------------------------------------------------------------------------
 
 ## 📁 Repository Structure
 
-    CPP-Projects/
+CPP-Projects/
 │
-├── 01-Stone-Paper-Scissors/
+├── 01-Rock-Paper-Scissors/
+│   ├── RockPaperScissors.cpp
+│   └── README.md
 ├── README.md
 └── .gitignore
 
 ------------------------------------------------------------------------
 
-## ✅ What's Included
+## 🚀 Featured Project
 
--   **cpp-portfolio/** --- Root of the repository\
--   **CPP_I/** --- Fundamental C++ topics and practice
-    -   **exercises/** --- Small practice programs (loops, conditions,
-        functions, etc.)
--   **projects/** --- Larger, real-world C++ applications *(planned)*\
--   **README.md** --- Repository overview and documentation
+### 01-Rock-Paper-Scissors
+
+A classic console-based Rock-Paper-Scissors game written in C++.  
+Features:
+
+- Player vs Computer gameplay
+- Input validation
+- Score tracking
+- Clean and commented code (great for beginners)
 
 ------------------------------------------------------------------------
 
@@ -43,8 +48,9 @@ g++ filename.cpp -o program
 
 ### **Using Visual Studio (Windows):**
 
--   Open the `.sln` file inside the project folder\
--   Build → Run the project normally
+- Open the `.sln` file inside the project folder\
+
+- Build → Run the project normally
 
 ------------------------------------------------------------------------
 
@@ -52,3 +58,5 @@ g++ filename.cpp -o program
 
 This project is released under the **MIT License**.\
 See the `LICENSE` file for more details.
+
+⭐ Star this repo if you find it helpful!
