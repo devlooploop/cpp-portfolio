@@ -10,7 +10,6 @@ Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91?style=flat&logo=visu
 A collection of C++ projects.
 
 ------------------------------------------------------------------------
-
 ## 📁 Repository Structure
 
 CPP-Projects/
@@ -20,7 +19,6 @@ CPP-Projects/
 │   └── README.md
 ├── README.md
 └── .gitignore
-
 ------------------------------------------------------------------------
 
 ## 🚀 Featured Project
