@@ -15,10 +15,14 @@ A collection of C++ projects.
 
 ```CPP-Projects/
 ├── 01-Rock-Paper-Scissors/
-│   ├── RockPaperScissors.cpp
+│   └── RockPaperScissors.cpp
 │
 ├── 02-Math-Quiz-Game/
-│   ├── MathQuizGame.cpp
+│   └── MathQuizGame.cpp
+│
+├── 03-Bank-Clients-Management/
+│   ├── BankClientsManagement.cpp
+│   └── Clients.txt
 │
 ├── README.md
 └── .gitignore
