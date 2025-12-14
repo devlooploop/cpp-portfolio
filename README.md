@@ -58,6 +58,22 @@ Interactive math quiz with levels and colorful feedback!
 
 Perfect project to practice: `enum`, `struct`, functions, random numbers, game loops, and `system("color")`.
 
+### 03-Bank-Clients-Management
+
+A complete console-based bank client management system written in C++.  
+**Highlights:**
+
+- Persistent data storage using `Clients.txt` (file I/O)
+- Main menu with 6 options: List, Add, Delete, Update, Find, Exit
+- Add new clients (with unique account number validation)
+- View all clients in a formatted table
+- Find client by account number
+- Update client information
+- Delete clients with confirmation
+- Clean, modular code using structs, vectors, and functions
+
+Perfect project to practice: file handling, structs, vectors, string manipulation, user input validation, and menu-driven applications.
+
 ------------------------------------------------------------------------
 
 ## 🛠️ How to Run Code
