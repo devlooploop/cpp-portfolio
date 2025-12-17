@@ -1,7 +1,7 @@
 
 /*
     ╔═══════════════════════════════════════════════════════════════════════════╗
-    ║                    Math Quiz Game - C++ Console Project                   ║
+    ║           Math Quiz Game - C++ Console Project  - Mar-dev        			║
     ║                                                                           ║
     ║  A fun interactive math quiz game with levels, operations, scoring,       ║
     ║  colored feedback, sound on wrong answers, and play-again feature.        ║

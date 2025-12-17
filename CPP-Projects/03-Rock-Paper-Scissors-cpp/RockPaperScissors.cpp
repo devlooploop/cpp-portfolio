@@ -1,6 +1,6 @@
 /******************************************************************************************
 
-	PROJECT        : Stone Paper Scissors Game (Rock-Paper-Scissors)
+	PROJECT        : Stone Paper Scissors Game (Rock-Paper-Scissors) - Mar-dev
 	FILE           : StonePaperScissors.cpp
 	LANGUAGE       : C++
 	PLATFORM       : Windows Console (uses system("color") and system("cls"))
