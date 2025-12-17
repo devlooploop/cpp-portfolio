@@ -2,18 +2,18 @@
 
 ![C++](https://img.shields.io/badge/C++-00599C?style=flat&logo=cplusplus&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)
-![Visual
-Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91?style=flat&logo=visualstudio&logoColor=white)
+![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91?style=flat&logo=visualstudio&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-A collection of console-based C++ projects demonstrating key programming concepts like file I/O, data structures, game logic, input validation, and menu-driven applications.
+A collection of **console-based C++ projects** demonstrating key programming concepts such as **file I/O**, **data structures**, **game logic**, **input validation**, and **menu-driven applications**.
 
-------------------------------------------------------------------------
+---
 
 ## 📁 Repository Structure
 
-```CPP-Projects/
+```text
+CPP-Projects/
 ├── 01-Bank-Clients-Management-cpp/
 │   ├── BankClientsManagement.cpp
 │   └── Clients.txt
@@ -32,88 +32,105 @@ A collection of console-based C++ projects demonstrating key programming concept
 └── LICENSE
 ```
 
-------------------------------------------------------------------------
+---
 
 ## 🚀 Featured Projects
 
-### 01-Bank-Clients-Management
+### 01 – Bank Clients Management
 
-A complete console-based bank client management system written in C++.  
+A complete **console-based bank client management system** written in C++.
+
 **Highlights:**
 
 - Persistent data storage using `Clients.txt` (file I/O)
 - Main menu with 6 options: List, Add, Delete, Update, Find, Exit
-- Add new clients (with unique account number validation)
+- Add new clients with **unique account number validation**
 - View all clients in a formatted table
-- Find client by account number
+- Find clients by account number
 - Update client information
 - Delete clients with confirmation
-- Clean, modular code using structs, vectors, and functions
+- Clean, modular code using `struct`, `vector`, and functions
 
-Perfect project to practice: file handling, structs, vectors, string manipulation, user input validation, and menu-driven applications.
+**Skills practiced:**  
+File handling, structs, vectors, string manipulation, input validation, and menu-driven design.
 
-### 02-Bank-Project-2-Extension
+---
 
-An extended version of the bank system with added transaction capabilities.
+### 02 – Bank Project (Extension with Transactions)
+
+An **extended version** of the bank system with transaction support.
+
 **Highlights:**
 
 - Builds on the basic client management system
-- Supports financial transactions (e.g., deposit, withdraw, transfer)
-- Updated persistent storage in Clients.txt to include balance and transaction history
+- Supports financial transactions (Deposit, Withdraw, Transfer)
+- Persistent storage includes balance data
 - Enhanced menu with transaction options
-- Balance checks, transaction logging, and error handling for insufficient funds
-- Modular functions for reusability
+- Balance checks and error handling for insufficient funds
+- Modular and reusable functions
 
-Great for learning: advanced file I/O, transaction logic, data persistence across sessions, and extending existing projects.
+**Skills practiced:**  
+Advanced file I/O, transaction logic, data persistence, and extending existing systems.
 
-### 03-Rock-Paper-Scissors
+---
 
-A classic console-based Rock-Paper-Scissors game written in C++.  
-Features:
+### 03 – Rock Paper Scissors
+
+A classic **console-based Rock-Paper-Scissors** game written in C++.
+
+**Features:**
 
 - Player vs Computer gameplay
 - Input validation
 - Score tracking
-- Clean and commented code (great for beginners)
+- Clean and beginner-friendly code
 
-### 04-Math-Quiz-Game
+**Skills practiced:**
 
-Interactive math quiz with levels and colorful feedback!  
+enums, structs, game logic, random number generation, input validation, multi-round loops, modular functions, console UI formatting, color control, and sound feedback.
+
+---
+
+### 04 – Math Quiz Game
+
+An interactive **math quiz game** with difficulty levels and visual feedback.
+
 **Highlights:**
 
 - Choose number of questions (1–10)
-- 3 difficulty levels: Easy (1-digit), Medium, Hard (2-digit) + Mix mode
-- 4 operations: Add / Subtract / Multiply / Divide + Mix mode
+- 3 difficulty levels: Easy, Medium, Hard + Mix mode
+- 4 operations: Add, Subtract, Multiply, Divide + Mix mode
 - Green screen + smiley for correct answers
 - Red screen + beep + sad face for wrong answers
-- Integer-only answers (5÷2 = 2 → school-style math)
-- Final score + Pass/Fail result
-- Play again? Y/N with full screen reset
+- Integer-only division (e.g., `5 ÷ 2 = 2`)
+- Final score with Pass/Fail result
+- Replay option with full screen reset
 
-Perfect project to practice: `enum`, `struct`, functions, random numbers, game loops, and `system("color")`.
+**Skills practiced:**  
+`enum`, `struct`, functions, random numbers, loops, and `system("color")`.
 
-------------------------------------------------------------------------
+---
 
-## 🛠️ How to Run Code
+## 🛠️ How to Run the Code
 
-### **Using g++ (Linux/Mac):**
+### Using **g++** (Linux / macOS)
 
-``` bash
+```bash
 g++ filename.cpp -o program
 ./program
 ```
 
-### **Using Visual Studio (Windows):**
+### Using **Visual Studio** (Windows)
 
-- Open the `.sln` file inside the project folder\
+- Open the project folder or `.sln` file
+- Build the project
+- Run the program normally
 
-- Build → Run the project normally
-
-------------------------------------------------------------------------
+---
 
 ## 📜 License
 
-This project is released under the **MIT License**.\
+This project is released under the **MIT License**.  
 See the `LICENSE` file for more details.
 
-⭐ Star this repo if you find it helpful!
+⭐ **Star this repository** if you find it helpful!
