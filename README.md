@@ -22,10 +22,15 @@ CPP-Projects/
 │   ├── BankSystemWithTransactions.cpp
 │   └── Clients.txt
 │
-├── 03-Rock-Paper-Scissors-cpp/
+├── 03-Bank-Management-System-With-Users-cpp/
+│   ├── BankManagementSystem_WithUsers.cpp
+│   ├── Users.txt
+│   └── Clients.txt
+│   
+├── 04-Rock-Paper-Scissors-cpp/
 │   └── RockPaperScissors.cpp
 │
-├── 04-Math-Quiz-Game-cpp/
+├── 05-Math-Quiz-Game-cpp/
 │   └── MathQuizGame.cpp
 │
 ├── README.md
@@ -74,24 +79,54 @@ Advanced file I/O, transaction logic, data persistence, and extending existing s
 
 ---
 
-### 03 – Rock Paper Scissors
+### 03 – Bank Management System with Users & Permissions
 
-A classic **console-based Rock-Paper-Scissors** game written in C++.
+A full-featured banking system with user authentication and role-based access control.
+
+**Highlights:**
+
+- Login screen with username/password validation
+- Support for multiple users stored in Users.txt
+- Bit-wise permissions system controlling access to features
+- Admin can manage users: List, Add, Delete, Update, Find
+- **Permissions include:**
+  - Show Clients
+  - Add/Delete/Update Clients
+  - Find Clients
+  - Perform Transactions
+  - Manage Users *(only for Admins)*
+
+- **Logout** functionality (returns to login screen)
+- Access denied messages for unauthorized actions
+- Protection against deleting the main "Admin" user
+- Full permission selection (full access or granular)
+
+**Skills practiced:**
+
+User authentication, bit-wise operations, permissions system, multi-file data management, secure access control, advanced menu navigation, and modular architecture.
+
+---
+
+### 04 – Rock Paper Scissors
+
+A classic **console-based Rock-Paper-Scissors** game against the computer.
 
 **Features:**
 
 - Player vs Computer gameplay
 - Input validation
 - Score tracking
+- Win/lose/draw detection
+- Play again option
 - Clean and beginner-friendly code
 
 **Skills practiced:**
 
-enums, structs, game logic, random number generation, input validation, multi-round loops, modular functions, console UI formatting, color control, and sound feedback.
+enum, random number generation (rand()), game logic, loops, input validation, conditional logic, and modular functions.
 
 ---
 
-### 04 – Math Quiz Game
+### 05 – Math Quiz Game
 
 An interactive **math quiz game** with difficulty levels and visual feedback.
 
