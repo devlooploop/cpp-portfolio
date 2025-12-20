@@ -1,7 +1,4 @@
 
-// 08 - Algorithms & Problem Solving Level 4
-// Project #1 Bank Extension #2 Requirements
-
 /*
     Project #1 - Bank Extension #2 Requirements
     ==========================================
