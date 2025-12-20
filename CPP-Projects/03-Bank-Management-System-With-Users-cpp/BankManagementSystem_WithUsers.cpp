@@ -1,6 +1,6 @@
 
 /*
-    Project #1 - Bank Extension #2 Requirements
+    Project #1 - Bank Extension #2 Requirements - Mar-dev
     ==========================================
 
     You must extend the previous Bank project with a full User Management system and login/logout functionality.
