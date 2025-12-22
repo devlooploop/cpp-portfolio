@@ -26,12 +26,16 @@ CPP-Projects/
 │   ├── BankManagementSystem_WithUsers.cpp
 │   ├── Users.txt
 │   └── Clients.txt
-│   
+│
 ├── 04-Rock-Paper-Scissors-cpp/
 │   └── RockPaperScissors.cpp
 │
 ├── 05-Math-Quiz-Game-cpp/
 │   └── MathQuizGame.cpp
+│
+├── 06-ATM-Simulator-cpp/
+│   ├── ATMSimulator.cpp
+│   └── Clients.txt
 │
 ├── README.md
 └── LICENSE
@@ -143,6 +147,27 @@ An interactive **math quiz game** with difficulty levels and visual feedback.
 
 **Skills practiced:**  
 `enum`, `struct`, functions, random numbers, loops, and `system("color")`.
+
+---
+
+### 06 – ATM Simulator
+
+A fully functional **console-based ATM system** with secure login and financial operations.
+
+**Highlights:**
+
+- User login with Account Number & PIN code
+- Quick Withdraw (predefined amounts: 20, 50, 100, ..., 1000)
+- Normal Withdraw (multiples of 5)
+- Deposit with confirmation prompt
+- Check Balance
+- Logout (returns to login screen)
+- Persistent data storage in **Clients.txt** (file I/O)
+- Input validation, error handling, and balance checks
+- Clean modular design with separate functions for each screen
+
+**Skills practiced:**  
+File I/O, structs, vectors, input validation, menu-driven applications, transaction logic, user authentication, and secure password management.
 
 ---
 
