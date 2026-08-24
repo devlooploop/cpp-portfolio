@@ -1,12 +1,16 @@
 # C++ Portfolio
 
-![C++](https://img.shields.io/badge/C++-00599C?style=flat&logo=cplusplus&logoColor=white)
+![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=flat&logo=cplusplus&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)
 ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91?style=flat&logo=visualstudio&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-A collection of **console-based C++ projects** demonstrating key programming concepts such as **file I/O**, **data structures**, **game logic**, **input validation**, and **menu-driven applications**.
+A collection of **C++ projects** demonstrating practical programming and application development skills.
+
+The repository includes projects ranging from **banking management systems and transaction processing applications** to smaller programming exercises and console-based games.
+
+The projects demonstrate concepts such as **Object-Oriented Programming (OOP), file I/O, data persistence, data structures, user authentication, permissions, transaction processing, input validation, error handling, and menu-driven application design**.
 
 ---
 
@@ -14,27 +18,35 @@ A collection of **console-based C++ projects** demonstrating key programming con
 
 ```text
 CPP-Projects/
-├── 01-Bank-Clients-Management-cpp/
-│   ├── BankClientsManagement.cpp
+
+├── 01-Bank-Management-System-cpp/
+│   ├── *.cpp
+│   ├── *.h
+│   ├── Clients.txt
+│   └── Users.txt
+│   
+│
+├── 02-ATM-Simulator-cpp/
+│   ├── ATMSimulator.cpp
 │   └── Clients.txt
 │
-├── 02-Bank-Project-2-Extension-cpp/
+├── 03-Bank-Project-2-Extension-cpp/
 │   ├── BankSystemWithTransactions.cpp
 │   └── Clients.txt
 │
-├── 03-Bank-Management-System-With-Users-cpp/
+├── 04-Bank-Management-System-With-Users-cpp/
 │   ├── BankManagementSystem_WithUsers.cpp
 │   ├── Users.txt
 │   └── Clients.txt
 │
-├── 04-Rock-Paper-Scissors-cpp/
+├── 05-Rock-Paper-Scissors-cpp/
 │   └── RockPaperScissors.cpp
 │
-├── 05-Math-Quiz-Game-cpp/
+├── 06-Math-Quiz-Game-cpp/
 │   └── MathQuizGame.cpp
 │
-├── 06-ATM-Simulator-cpp/
-│   ├── ATMSimulator.cpp
+├── 07-Bank-Clients-Management-cpp/
+│   ├── BankClientsManagement.cpp
 │   └── Clients.txt
 │
 ├── README.md
@@ -45,152 +57,258 @@ CPP-Projects/
 
 ## 🚀 Featured Projects
 
-### 01 – Bank Clients Management
+### 01 – Bank Management System
 
-A complete **console-based bank client management system** written in C++.
+A larger **C++ banking management application** designed to bring together client management, banking transactions, authentication, permissions, and logging into one structured system.
 
-**Highlights:**
+The project uses a modular architecture with multiple classes and screens to separate responsibilities and organize the application's functionality.
 
-- Persistent data storage using `Clients.txt` (file I/O)
-- Main menu with 6 options: List, Add, Delete, Update, Find, Exit
-- Add new clients with **unique account number validation**
-- View all clients in a formatted table
-- Find clients by account number
+#### 🔐 User Authentication
+
+- Username and password login
+- Login validation
+- Failed login handling
+- System lockout after repeated failed attempts
+- Logout functionality
+
+#### 👥 Client Management
+
+- List clients
+- Add new clients
+- Delete clients
 - Update client information
-- Delete clients with confirmation
-- Clean, modular code using `struct`, `vector`, and functions
+- Find clients
+- Account number validation
+- Persistent client data
 
-**Skills practiced:**  
-File handling, structs, vectors, string manipulation, input validation, and menu-driven design.
+#### 💰 Banking Transactions
+
+- Deposit
+- Withdraw
+- Transfer between accounts
+- Balance validation
+- Transaction confirmation
+- Updated account balances
+- Transfer history
+
+#### 👤 User Management
+
+- List users
+- Add users
+- Delete users
+- Update users
+- Find users
+- User permissions
+- Access control
+
+#### 📋 Login & Transfer Logs
+
+- Login register/history
+- Transfer history
+- Date and time records
+- Source and destination account information
+- Transaction amounts
+- Account balances after transfers
+- User responsible for the operation
+
+#### 🧠 Technical Concepts
+
+- Object-Oriented Programming (OOP)
+- Classes and objects
+- Encapsulation
+- Inheritance
+- Static members and methods
+- Enumerations
+- Structures
+- Vectors
+- File I/O
+- Data persistence
+- Input validation
+- Error handling
+- User authentication
+- Authorization and permissions
+- Bitwise operations
+- Transaction processing
+- Modular application design
+- Menu-driven console applications
+
+#### 📂 Project Structure
+
+```text
+01-Bank-Management-System-cpp/
+
+├── *.cpp
+├── *.h
+├── Clients.txt
+├── Users.txt
+└── README.md
+```
+
+The project is organized into separate classes and screens for different responsibilities, making the application easier to maintain, extend, and understand.
 
 ---
 
-### 02 – Bank Project (Extension with Transactions)
+### 02 – ATM Simulator
 
-An **extended version** of the bank system with transaction support.
+A console-based **ATM simulation system** with authentication and basic banking operations.
 
-**Highlights:**
-
-- Builds on the basic client management system
-- Supports financial transactions (Deposit, Withdraw, Transfer)
-- Persistent storage includes balance data
-- Enhanced menu with transaction options
-- Balance checks and error handling for insufficient funds
-- Modular and reusable functions
-
-**Skills practiced:**  
-Advanced file I/O, transaction logic, data persistence, and extending existing systems.
-
----
-
-### 03 – Bank Management System with Users & Permissions
-
-A full-featured banking system with user authentication and role-based access control.
-
-**Highlights:**
-
-- Login screen with username/password validation
-- Support for multiple users stored in Users.txt
-- Bit-wise permissions system controlling access to features
-- Admin can manage users: List, Add, Delete, Update, Find
-- **Permissions include:**
-  - Show Clients
-  - Add/Delete/Update Clients
-  - Find Clients
-  - Perform Transactions
-  - Manage Users *(only for Admins)*
-
-- **Logout** functionality (returns to login screen)
-- Access denied messages for unauthorized actions
-- Protection against deleting the main "Admin" user
-- Full permission selection (full access or granular)
-
-**Skills practiced:**
-
-User authentication, bit-wise operations, permissions system, multi-file data management, secure access control, advanced menu navigation, and modular architecture.
+- Account number and PIN authentication
+- Quick withdrawal
+- Normal withdrawal
+- Deposit functionality
+- Balance checking
+- Logout functionality
+- Persistent client data
+- Input validation
+- Balance verification
+- Transaction processing
+- Menu-driven interface
 
 ---
 
-### 04 – Rock Paper Scissors
+### 03 – Bank Project – Transactions Extension
 
-A classic **console-based Rock-Paper-Scissors** game against the computer.
+An extended version of the bank client management system with **financial transaction functionality**.
 
-**Features:**
+- Builds on the client management system
+- Deposit functionality
+- Withdraw functionality
+- Transfer functionality
+- Persistent account balances
+- Balance validation
+- Insufficient funds handling
+- Transaction-oriented menu system
+- Reusable and modular functions
+
+---
+
+### 04 – Bank Management System with Users & Permissions
+
+A more advanced banking application introducing **user authentication and permission management**.
+
+- Username and password authentication
+- Multiple users stored in `Users.txt`
+- Client management
+- User management
+- Role-based access control
+- Bitwise permission system
+- Granular permissions for different operations
+- Access denied handling
+- Admin user protection
+- Logout functionality
+- Transaction operations
+
+#### 🔑 Permissions Include
+
+- Show Clients
+- Add Clients
+- Delete Clients
+- Update Clients
+- Find Clients
+- Perform Transactions
+- Manage Users
+
+---
+
+### 05 – Rock Paper Scissors
+
+A classic **console-based Rock-Paper-Scissors game** where the player competes against the computer.
 
 - Player vs Computer gameplay
+- Random computer choices
 - Input validation
+- Win / Lose / Draw detection
 - Score tracking
-- Win/lose/draw detection
-- Play again option
-- Clean and beginner-friendly code
-
-**Skills practiced:**
-
-enum, random number generation (rand()), game logic, loops, input validation, conditional logic, and modular functions.
+- Play-again functionality
+- Game result display
 
 ---
 
-### 05 – Math Quiz Game
+### 06 – Math Quiz Game
 
-An interactive **math quiz game** with difficulty levels and visual feedback.
+An interactive **console-based mathematics quiz game** with multiple difficulty levels and operations.
 
-**Highlights:**
-
-- Choose number of questions (1–10)
-- 3 difficulty levels: Easy, Medium, Hard + Mix mode
-- 4 operations: Add, Subtract, Multiply, Divide + Mix mode
-- Green screen + smiley for correct answers
-- Red screen + beep + sad face for wrong answers
-- Integer-only division (e.g., `5 ÷ 2 = 2`)
-- Final score with Pass/Fail result
-- Replay option with full screen reset
-
-**Skills practiced:**  
-`enum`, `struct`, functions, random numbers, loops, and `system("color")`.
-
----
-
-### 06 – ATM Simulator
-
-A fully functional **console-based ATM system** with secure login and financial operations.
-
-**Highlights:**
-
-- User login with Account Number & PIN code
-- Quick Withdraw (predefined amounts: 20, 50, 100, ..., 1000)
-- Normal Withdraw (multiples of 5)
-- Deposit with confirmation prompt
-- Check Balance
-- Logout (returns to login screen)
-- Persistent data storage in **Clients.txt** (file I/O)
-- Input validation, error handling, and balance checks
-- Clean modular design with separate functions for each screen
-
-**Skills practiced:**  
-File I/O, structs, vectors, input validation, menu-driven applications, transaction logic, user authentication, and secure password management.
+- Select the number of questions
+- Multiple difficulty levels
+- Easy, Medium, Hard, and Mix modes
+- Addition
+- Subtraction
+- Multiplication
+- Division
+- Mixed operations mode
+- Automatic score calculation
+- Pass / Fail result
+- Replay functionality
+- Visual feedback for correct and incorrect answers
 
 ---
 
-## 🛠️ How to Run the Code
+### 07 – Bank Clients Management
 
-### Using **g++** (Linux / macOS)
+A console-based **bank client management system** developed in C++.
+
+- Persistent client data using `Clients.txt`
+- List all clients
+- Add new clients
+- Delete clients
+- Update client information
+- Find clients by account number
+- Unique account number validation
+- Menu-driven application
+- Structured client data using `struct`
+- Data management using `vector`
+
+---
+
+## 🛠️ How to Run
+
+### Visual Studio 2022
+
+The projects can be opened and built using **Visual Studio 2022**.
+
+Recommended configuration:
+
+```text
+IDE:              Visual Studio 2022
+Platform Toolset: v143
+Language:         C++
+```
+
+#### Steps
+
+1. Clone or download the repository.
+2. Open the Visual Studio solution/project.
+3. Make sure the required C++ workload and build tools are installed.
+4. Select the desired project.
+5. Build the solution.
+6. Run the application.
+
+---
+
+### Using g++
+
+For individual `.cpp` files, the programs can also be compiled using `g++`.
 
 ```bash
 g++ filename.cpp -o program
 ./program
 ```
 
-### Using **Visual Studio** (Windows)
+For example:
 
-- Open the project folder or `.sln` file
-- Build the project
-- Run the program normally
+```bash
+g++ RockPaperScissors.cpp -o RockPaperScissors
+./RockPaperScissors
+```
 
 ---
 
 ## 📜 License
 
-This project is released under the **MIT License**.  
-See the `LICENSE` file for more details.
+This project is released under the **MIT License**.
 
-⭐ **Star this repository** if you find it helpful!
+See the [`LICENSE`](LICENSE) file for more details.
+
+---
+
+⭐ **If you find this portfolio useful, feel free to star the repository.**
