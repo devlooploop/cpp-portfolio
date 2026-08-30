@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="CurrencyExchange.vcxproj" Id="2f386b6e-74c7-4d27-86df-5609aff8c8e3" />
+</Solution>
