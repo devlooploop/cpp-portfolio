@@ -86,14 +86,12 @@ private:
     static void _ShowTransactionsMenu()
     {
        // cout << "\nTransactions Menu Will be here...\n";
-       // clsTransactionsScreen::ShowTransactionsMenu();
         clsTransactionsScreen::ShowTransactionsScreen();
     }
 
     static void _ShowManageUsersMenu()
     {
        // cout << "\nUsers Menu Will be here...\n";
-       // clsManageUsersScreen::ShowManageUsersScreen();
         clsManageUsersScreen::ShowManageUsersMenu();
                 
     }
@@ -102,7 +100,6 @@ private:
     /*static void _ShowEndScreen() 
     {
         cout << "\nEnd Screen Will be here...\n";
-
     }*/
 
     static void _ShowCurrencyExchangeMainScreen()
@@ -171,12 +168,11 @@ private:
             system("cls");
             _ShowCurrencyExchangeMainScreen();
             _GoBackToMainMenu();
-
+            break;
         case enMainMenuOptions::eExit:
             system("cls");
             //_ShowEndScreen();
             _Logout();
-
             break;
         }
 
