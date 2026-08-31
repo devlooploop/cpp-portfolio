@@ -1,6 +1,2 @@
-Jiji#//#lee#//#Hilow@Gmail.com#//#888-888#//#user1#//#/012#//#-1
-Jamie#//#Adie#//#JA@gmail.com#//#1888-888#//#user2#//#/012#//#0
-Lina#//#Loay#//#Lina@gmail.com#//#888-8884#//#user3#//#/012#//#-1
-Sowi#//#So#//#Swiso@gmail.com#//#1888-888#//#user4#//#/012#//#-1
-Olie#//#Rung#//#OR@gmail.com#//#1888-888#//#user6#//#/012#//#-1
-Ola#//#Ahmad#//#Ola@gmail.com#//#1888-888#//#user8#//#/012#//#7
+Hailo#//#adm#//#AA@Gmail.com#//#888-888#//#admin#//#3456#//#-1
+Jiji#//#lee#//#Hilow@Gmail.com#//#888-888#//#user2#//#3456#//#0

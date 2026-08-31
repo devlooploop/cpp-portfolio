@@ -290,8 +290,6 @@ public:
     static clsUser Find(string UserName, string Password)
     {
 
-
-
         fstream MyFile;
         MyFile.open("Users.txt", ios::in);//read Mode
 
