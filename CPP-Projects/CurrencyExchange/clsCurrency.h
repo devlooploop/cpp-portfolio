@@ -27,8 +27,12 @@ private:
 		vector<string> vLine;
 		vLine = clsString::Split(Line, Delim);
 
-		return clsCurrency(enMode::eUpdateMode, vLine[0], vLine[1], vLine[2],
-			stod(vLine[3]));
+		return clsCurrency(enMode::eUpdateMode, 
+			vLine[0], 
+			vLine[1], 
+			vLine[2],
+			stof(vLine[3])
+		);
 	}
 
 	static string _ConvertCurrencyObjectToLine(clsCurrency Currency, string Delim = "#//#")

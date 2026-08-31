@@ -1,12 +1,10 @@
-// Course #11 - OOP as it Should Be (Applications)
-// Lesson #44 Currency Calculator Screen
-//   (Project 04: Currency Exchange 06)
 
-// ** Mine **
+// Project: Currency Exchange 
+// clsCurrencyCalculatorScreen.h
 #pragma once
 
 
-class clsCurrencyCalculatorScreen : protected clsScreen  // ** Mine **
+class clsCurrencyCalculatorScreen : protected clsScreen  
 {
 private:
 	static string _ReadCurrencyCode()
@@ -70,8 +68,7 @@ private:
 
 		float AmountInCurrency2 = Currency1.ConvertUSDToOtherCurrency(Amount, Currency2);
 
-		cout << Amount << " " << Currency1.CurrencyCode() +
-			" = " << AmountInCurrency2 << " "<< Currency2.CurrencyCode() << "\n";
+		cout << Amount << " " << Currency1.CurrencyCode() << " = " << AmountInCurrency2 << " " << Currency2.CurrencyCode() << "\n";
 		
 	}
 
@@ -98,8 +95,7 @@ public:
 			cout << "\n\nDo you want to Perform another operation? y/n ?";
 				cin >> Answer;
 
-				cout << endl;
-		} 
+		}
 
 	}
 

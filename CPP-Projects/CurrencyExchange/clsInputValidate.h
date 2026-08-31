@@ -115,7 +115,7 @@ public:
 
 		while (!IsNumberBetween(Number, From, To)) {
 			cout << ErrorMessage;
-			Number = ReadDblNumber();
+			Number = ReadFloatNumber();
 		}
 		return Number;
 	}
