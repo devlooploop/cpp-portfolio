@@ -176,6 +176,7 @@
     <ClInclude Include="Global.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="clsLoginRegisterScreen.h" />
     <Text Include="clsMainScreen.h" />
     <Text Include="Currencies.txt" />
     <Text Include="Users.txt" />

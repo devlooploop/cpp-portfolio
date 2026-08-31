@@ -1,7 +1,4 @@
-// Project: Bank System
-
 #pragma once
-
 #include <iostream>
 #include <string>
 #include "clsPerson.h"
@@ -13,86 +10,67 @@
 
 
 using namespace std;
-class clsUser : public clsPerson  // Mine ***
+class clsUser : public clsPerson
 {
 private:
 
     enum enMode { EmptyMode = 0, UpdateMode = 1, AddNewMode = 2 };
-
     enMode _Mode;
     string _UserName;
     string _Password;
-    int    _Permissions;
+    string _EncryptedPassword;
+    int _Permissions;
 
     bool _MarkedForDelete = false;
 
-
-    struct stLoginRegisterRecord; // struct definition in the "Public section"
-
-    static vector <stLoginRegisterRecord>  _LoadRegisterLoginUsersFromFile()
+    struct stLoginRegisterRecord;
+    static stLoginRegisterRecord _ConvertLoginRegisterLineToRecord(string Line, string Seperator = "#//#")
     {
-        fstream MyFile;
-        MyFile.open("LoginRegister.txt", ios::in);
-
-        vector <stLoginRegisterRecord> vLoginRegisterRecord;
-
-        if (MyFile.is_open())
-        {
-            string Line;
-
-            while (getline(MyFile, Line))
-            {
-                vLoginRegisterRecord.push_back(_ConvertLoginRegisterLineToRecord(Line));
-            }
-
-            MyFile.close();
-        }
-        return vLoginRegisterRecord;
-    }
-
-
-    static stLoginRegisterRecord _ConvertLoginRegisterLineToRecord(string Line, string Separator = "#//#")
-    {
-
-
         stLoginRegisterRecord LoginRegisterRecord;
 
-        vector<string> vDataLine = clsString::Split(Line, Separator);
 
-        LoginRegisterRecord.DateTime = vDataLine[0];
-        LoginRegisterRecord.UserName = vDataLine[1];
-        LoginRegisterRecord.Password = clsUtil::DecryptText(vDataLine[2]);
-        LoginRegisterRecord.Permissions = stoi(vDataLine[3]);
+        vector <string> LoginRegisterDataLine = clsString::Split(Line, Seperator);
+        LoginRegisterRecord.DateTime = LoginRegisterDataLine[0];
+        LoginRegisterRecord.UserName = LoginRegisterDataLine[1];
+        LoginRegisterRecord.Password = clsUtil::DecryptText(LoginRegisterDataLine[2]);
+        LoginRegisterRecord.Permissions = stoi(LoginRegisterDataLine[3]);
 
         return LoginRegisterRecord;
 
     }
 
-
-    static clsUser _ConvertLineToUserObject(string Line, string Separator = "#//#")
+    string _PrepareLogInRecord(string Seperator = "#//#")
     {
-        vector<string> vUserData;
-        vUserData = clsString::Split(Line, Separator);
-
-        return clsUser(enMode::UpdateMode, vUserData[0], vUserData[1], vUserData[2],
-            vUserData[3], vUserData[4], clsUtil::DecryptText(vUserData[5]),
-            stoi(vUserData[6]));
-       
-        return clsUser(enMode::UpdateMode, vUserData[0], vUserData[1], vUserData[2],
-            vUserData[3], vUserData[4], clsUtil::DecryptText(vUserData[5]),
-            stoi(vUserData[6]));
+        string LoginRecord = "";
+        LoginRecord += clsDate::GetSystemDateTimeString() + Seperator;
+        LoginRecord += UserName + Seperator;
+        //here we encypt store the encrypted Password not the real one.
+        LoginRecord += clsUtil::EncryptText(Password) + Seperator;
+        LoginRecord += to_string(Permissions);
+        return LoginRecord;
     }
 
-    static string _ConvertUserObjectToLine(clsUser User, string Separator = "#//#")
+    static clsUser _ConvertLinetoUserObject(string Line, string Seperator = "#//#")
+    {
+        vector<string> vUserData;
+        vUserData = clsString::Split(Line, Seperator);
+
+        return clsUser(enMode::UpdateMode, vUserData[0], vUserData[1], vUserData[2],
+            vUserData[3], vUserData[4], clsUtil::DecryptText(vUserData[5]), stoi(vUserData[6]));
+
+    }
+
+    static string _ConverUserObjectToLine(clsUser User, string Seperator = "#//#")
     {
 
         string UserRecord = "";
-        UserRecord += User.FirstName + Separator;
-        UserRecord += User.LastName + Separator;
-        UserRecord += User.Email + Separator;
-        UserRecord += User.Phone + Separator;
-        UserRecord += User.UserName + Separator;
-        UserRecord += clsUtil::EncryptText(User.Password) + Separator;
+        UserRecord += User.FirstName + Seperator;
+        UserRecord += User.LastName + Seperator;
+        UserRecord += User.Email + Seperator;
+        UserRecord += User.Phone + Seperator;
+        UserRecord += User.UserName + Seperator;
+        //here we encypt store the encrypted Password not the real one.
+        UserRecord += clsUtil::EncryptText(User.Password) + Seperator;
         UserRecord += to_string(User.Permissions);
 
         return UserRecord;
@@ -101,6 +79,7 @@ private:
 
     static  vector <clsUser> _LoadUsersDataFromFile()
     {
+
         vector <clsUser> vUsers;
 
         fstream MyFile;
@@ -111,10 +90,11 @@ private:
 
             string Line;
 
+
             while (getline(MyFile, Line))
             {
 
-                clsUser User = _ConvertLineToUserObject(Line);
+                clsUser User = _ConvertLinetoUserObject(Line);
 
                 vUsers.push_back(User);
             }
@@ -143,7 +123,7 @@ private:
                 if (U.MarkedForDeleted() == false)
                 {
                     //we only write records that are not marked for delete.  
-                    DataLine = _ConvertUserObjectToLine(U);
+                    DataLine = _ConverUserObjectToLine(U);
                     MyFile << DataLine << endl;
 
                 }
@@ -178,7 +158,7 @@ private:
     void _AddNew()
     {
 
-        _AddDataLineToFile(_ConvertUserObjectToLine(*this));
+        _AddDataLineToFile(_ConverUserObjectToLine(*this));
     }
 
     void _AddDataLineToFile(string  stDataLine)
@@ -201,18 +181,10 @@ private:
         return clsUser(enMode::EmptyMode, "", "", "", "", "", "", 0);
     }
 
-    string _PrepareLogInRecord(string Separator = "#//#")
+    static string EnctyptedPassword(string Password)
     {
-        string LogRecord = "";
-
-        LogRecord += clsDate::GetSystemDateTimeString() + Separator;
-        LogRecord += UserName + Separator;
-        LogRecord += clsUtil::EncryptText(Password) + Separator;
-        LogRecord += to_string(Permissions);
-
-        return LogRecord;
+        return clsUtil::EncryptText(Password);
     }
-
 
 
 public:
@@ -221,6 +193,15 @@ public:
         eAll = -1, pListUsers = 1, pAddNewUser = 2, pDeleteUser = 4,
         pUpdateUser = 8, pFindUser = 16, pTranaction = 32, pManageUsers = 64,
         pShowLoginRegisterList = 128
+    };
+
+    struct stLoginRegisterRecord
+    {
+        string DateTime;
+        string UserName;
+        string Password;
+        int Permissions;
+
     };
 
     clsUser(enMode Mode, string FirstName, string LastName,
@@ -234,14 +215,6 @@ public:
         _Password = Password;
         _Permissions = Permissions;
     }
-
-    static struct stLoginRegisterRecord
-    {
-        string DateTime;
-        string UserName;
-        string Password;
-        int    Permissions;
-    };
 
     bool IsEmpty()
     {
@@ -276,6 +249,8 @@ public:
     }
     __declspec(property(get = GetPassword, put = SetPassword)) string Password;
 
+
+
     void SetPermissions(int Permissions)
     {
         _Permissions = Permissions;
@@ -297,7 +272,7 @@ public:
             string Line;
             while (getline(MyFile, Line))
             {
-                clsUser User = _ConvertLineToUserObject(Line);
+                clsUser User = _ConvertLinetoUserObject(Line);
                 if (User.UserName == UserName)
                 {
                     MyFile.close();
@@ -314,16 +289,18 @@ public:
 
     static clsUser Find(string UserName, string Password)
     {
+
+
+
         fstream MyFile;
         MyFile.open("Users.txt", ios::in);//read Mode
-
 
         if (MyFile.is_open())
         {
             string Line;
             while (getline(MyFile, Line))
             {
-                clsUser User = _ConvertLineToUserObject(Line);
+                clsUser User = _ConvertLinetoUserObject(Line);
                 if (User.UserName == UserName && User.Password == Password)
                 {
                     MyFile.close();
@@ -384,6 +361,7 @@ public:
 
     static bool IsUserExist(string UserName)
     {
+
         clsUser User = clsUser::Find(UserName);
         return (!User.IsEmpty());
     }
@@ -421,48 +399,68 @@ public:
         return _LoadUsersDataFromFile();
     }
 
-    bool  CheckAccessPermission(enPermissions Permissions)
+    bool CheckAccessPermission(enPermissions Permission)
     {
         if (this->Permissions == enPermissions::eAll)
-        {
             return true;
-        }
 
-        if ((this->Permissions & Permissions) == Permissions)
-        {
+        if ((Permission & this->Permissions) == Permission)
             return true;
-        }
-
         else
-        {
             return false;
-        }
+
     }
 
 
     void RegisterLogIn()
     {
 
-        fstream MyFile;
-        MyFile.open("LoginRegister.txt", ios::out | ios::app); //overwrite
+        string stDataLine = _PrepareLogInRecord();
 
-        string DataLine = _PrepareLogInRecord();
+        fstream MyFile;
+        MyFile.open("LoginRegister.txt", ios::out | ios::app);
 
         if (MyFile.is_open())
         {
 
-            MyFile << DataLine << endl;
+            MyFile << stDataLine << endl;
+
+            MyFile.close();
         }
 
-        MyFile.close();
-
     }
 
-    static vector <stLoginRegisterRecord> GetRegisterLoginUsersList()
+    static  vector <stLoginRegisterRecord> GetLoginRegisterList()
     {
-        return _LoadRegisterLoginUsersFromFile();
+        vector <stLoginRegisterRecord> vLoginRegisterRecord;
+
+        fstream MyFile;
+        MyFile.open("LoginRegister.txt", ios::in);//read Mode
+
+        if (MyFile.is_open())
+        {
+
+            string Line;
+
+            stLoginRegisterRecord LoginRegisterRecord;
+
+            while (getline(MyFile, Line))
+            {
+
+                LoginRegisterRecord = _ConvertLoginRegisterLineToRecord(Line);
+
+                vLoginRegisterRecord.push_back(LoginRegisterRecord);
+
+            }
+
+            MyFile.close();
+
+        }
+
+        return vLoginRegisterRecord;
+
     }
-
-
 
 };
+
+

@@ -130,6 +130,9 @@
     <Text Include="Users.txt">
       <Filter>Data</Filter>
     </Text>
+    <Text Include="clsLoginRegisterScreen.h">
+      <Filter>Header Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <None Include="clsCurrencyExchangeMainScreen.h">

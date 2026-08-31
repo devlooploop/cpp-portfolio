@@ -65,8 +65,7 @@ private:
 
 	static void _GoBackToCurrenciesMenuMessage()
 	{
-		
-		cout << "\nPress any key to go back to Currencies Menu ...\n";
+		cout << "\nPress any key to go back to Currency Exchange Menu ...\n";
 		system("pause > 0");
 		ShowCurrencyExchangeMainScreen();
 	}

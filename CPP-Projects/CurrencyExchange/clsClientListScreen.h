@@ -26,7 +26,7 @@ private:
 
 public:
   
-   static void ShowClientList()
+   static void ShowClientsList()
    {
         vector <clsBankClient> vClients = clsBankClient::GetClientsList();
 

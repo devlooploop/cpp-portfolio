@@ -21,7 +21,6 @@ private:
         eDeposit = 1, eWithdraw = 2,
         eShowTotalBalance = 3, eTransfer = 4,
         eShowMainMenue = 5
-
     };
 
     static short ReadTransactionsMenueOption()
@@ -63,7 +62,7 @@ private:
     {
         cout << "\n\nPress any key to go back to Transactions Menue...";
         system("pause>0");
-        ShowTransactionsScreen();
+        ShowTransactionsMenu();
 
     }
 
@@ -116,7 +115,7 @@ private:
 public:
 
 
-    static void ShowTransactionsScreen()
+    static void ShowTransactionsMenu()
     {
 
         if (!CheckAccessRights(clsUser::enPermissions::pTranaction))

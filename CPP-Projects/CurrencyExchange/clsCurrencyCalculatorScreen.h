@@ -79,7 +79,7 @@ public:
 
 		char Answer = 'y';
 		
-		while (Answer == 'y' || Answer == 'Y') 
+		do
 		{
 			system("cls");
 			_DrawScreenHeader("Currency Calculator Screen");
@@ -95,7 +95,7 @@ public:
 			cout << "\n\nDo you want to Perform another operation? y/n ?";
 				cin >> Answer;
 
-		}
+		} while (Answer == 'y' || Answer == 'Y');
 
 	}
 

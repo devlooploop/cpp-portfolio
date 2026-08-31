@@ -1,9 +1,5 @@
-// Project: Currency Exchange
-// clsMainScreen.h
-
 #pragma once
 #include <iostream>
-#include <iomanip>
 #include "clsScreen.h"
 #include "clsInputValidate.h"
 #include "clsClientListScreen.h"
@@ -15,34 +11,31 @@
 #include "clsManageUsersScreen.h"
 #include "clsLoginScreen.h"
 #include "Global.h"
-#include "clsCurrencyExchangeMainScreen.h"
-
-//#include "clsLoginRegisterScreen.h"
-
+#include "clsLoginRegisterScreen.h"
 
 using namespace std;
 
-
-class clsMainScreen :protected clsScreen 
+class clsMainScreen :protected clsScreen
 {
+
+
 private:
-    enum enMainMenuOptions 
-    {
+    enum enMainMenueOptions {
         eListClients = 1, eAddNewClient = 2, eDeleteClient = 3,
         eUpdateClient = 4, eFindClient = 5, eShowTransactionsMenu = 6,
-        eManageUsers = 7, eLoginRegister = 8, eCurrencyExchange = 9, eExit = 10
+        eManageUsers = 7, eLoginRegister = 8, eExit = 9
     };
 
-    static short _ReadMainMenuOption()
+    static short _ReadMainMenueOption()
     {
-        cout << setw(37) << left << "" << "Choose what do you want to do? [1 to 10]? ";
-        short Choice = clsInputValidate::ReadShortNumberBetween(1, 10, "Enter Number between 1 to 10? ");
+        cout << setw(37) << left << "" << "Choose what do you want to do? [1 to 9]? ";
+        short Choice = clsInputValidate::ReadShortNumberBetween(1, 9, "Enter Number between 1 to 8? ");
         return Choice;
     }
 
-    static  void _GoBackToMainMenu()
+    static  void _GoBackToMainMenue()
     {
-        cout << setw(37) << left << "" << "\n\tPress any key to go back to Main Menu...\n";
+        cout << setw(37) << left << "" << "\n\tPress any key to go back to Main Menue...\n";
 
         system("pause>0");
         ShowMainMenu();
@@ -51,132 +44,119 @@ private:
     static void _ShowAllClientsScreen()
     {
         //  cout << "\nClient List Screen Will be here...\n";
-        clsClientListScreen::ShowClientList();
-
+        clsClientListScreen::ShowClientsList();
     }
 
     static void _ShowAddNewClientsScreen()
     {
         // cout << "\nAdd New Client Screen Will be here...\n";
         clsAddNewClientScreen::ShowAddNewClientScreen();
-
     }
 
     static void _ShowDeleteClientScreen()
     {
         //cout << "\nDelete Client Screen Will be here...\n";
         clsDeleteClientScreen::ShowDeleteClientScreen();
-
     }
 
     static void _ShowUpdateClientScreen()
     {
         //cout << "\nUpdate Client Screen Will be here...\n";
         clsUpdateClientScreen::ShowUpdateClientScreen();
-
     }
 
     static void _ShowFindClientScreen()
     {
         // cout << "\nFind Client Screen Will be here...\n";
         clsFindClientScreen::ShowFindClientScreen();
-
     }
 
     static void _ShowTransactionsMenu()
     {
-       // cout << "\nTransactions Menu Will be here...\n";
-        clsTransactionsScreen::ShowTransactionsScreen();
+        // cout << "\nTransactions Menue Will be here...\n";
+        clsTransactionsScreen::ShowTransactionsMenu();
     }
 
-    static void _ShowManageUsersMenu()
+    static void _ShowManageUsersMenue()
     {
-       // cout << "\nUsers Menu Will be here...\n";
+        // cout << "\nUsers Menue Will be here...\n";
         clsManageUsersScreen::ShowManageUsersMenu();
-                
     }
 
-    // [Replaced by _Logout]
-    /*static void _ShowEndScreen() 
+    static void _ShowLoginRegisterScreen()
     {
-        cout << "\nEnd Screen Will be here...\n";
-    }*/
-
-    static void _ShowCurrencyExchangeMainScreen()
-    {
-        clsCurrencyExchangeMainScreen::ShowCurrencyExchangeMainScreen();
+        // cout << "\nLogin Register Will be here...\n";
+        clsLoginRegisterScreen::ShowLoginRegisterScreen();
     }
 
     static void _Logout()
     {
         CurrentUser = clsUser::Find("", "");
+
         //then it will go back to main function.
     }
 
-    static void _PerfromMainMenuOption(enMainMenuOptions MainMenuOption)
+    static void _PerfromMainMenueOption(enMainMenueOptions MainMenueOption)
     {
-        switch (MainMenuOption)
+        switch (MainMenueOption)
         {
-        case enMainMenuOptions::eListClients:
+        case enMainMenueOptions::eListClients:
         {
             system("cls");
             _ShowAllClientsScreen();
-            _GoBackToMainMenu();
+            _GoBackToMainMenue();
             break;
         }
-        case enMainMenuOptions::eAddNewClient:
+        case enMainMenueOptions::eAddNewClient:
             system("cls");
             _ShowAddNewClientsScreen();
-            _GoBackToMainMenu();
+            _GoBackToMainMenue();
             break;
 
-        case enMainMenuOptions::eDeleteClient:
+        case enMainMenueOptions::eDeleteClient:
             system("cls");
             _ShowDeleteClientScreen();
-            _GoBackToMainMenu();
+            _GoBackToMainMenue();
             break;
 
-        case enMainMenuOptions::eUpdateClient:
+        case enMainMenueOptions::eUpdateClient:
             system("cls");
             _ShowUpdateClientScreen();
-            _GoBackToMainMenu();
+            _GoBackToMainMenue();
             break;
 
-        case enMainMenuOptions::eFindClient:
+        case enMainMenueOptions::eFindClient:
             system("cls");
             _ShowFindClientScreen();
-            _GoBackToMainMenu();
+            _GoBackToMainMenue();
             break;
 
-        case enMainMenuOptions::eShowTransactionsMenu:
+        case enMainMenueOptions::eShowTransactionsMenu:
             system("cls");
             _ShowTransactionsMenu();
-            _GoBackToMainMenu();
+            _GoBackToMainMenue();
             break;
 
-        case enMainMenuOptions::eManageUsers:
+        case enMainMenueOptions::eManageUsers:
             system("cls");
-            _ShowManageUsersMenu();
-            _GoBackToMainMenu();
+            _ShowManageUsersMenue();
+            _GoBackToMainMenue();
             break;
-        case enMainMenuOptions::eLoginRegister:
+
+        case enMainMenueOptions::eLoginRegister:
             system("cls");
-          //  _ShowLoginRegisterListScreen();
-            _GoBackToMainMenu();
+            _ShowLoginRegisterScreen();
+            _GoBackToMainMenue();
             break;
-        case enMainMenuOptions::eCurrencyExchange:
+
+        case enMainMenueOptions::eExit:
             system("cls");
-            _ShowCurrencyExchangeMainScreen();
-            _GoBackToMainMenu();
-            break;
-        case enMainMenuOptions::eExit:
-            system("cls");
-            //_ShowEndScreen();
             _Logout();
             break;
         }
 
     }
+
 
 
 public:
@@ -189,7 +169,7 @@ public:
         _DrawScreenHeader("\t\tMain Screen");
 
         cout << setw(37) << left << "" << "===========================================\n";
-        cout << setw(37) << left << "" << "\t\t\tMain Menu\n";
+        cout << setw(37) << left << "" << "\t\t\tMain Menue\n";
         cout << setw(37) << left << "" << "===========================================\n";
         cout << setw(37) << left << "" << "\t[1] Show Client List.\n";
         cout << setw(37) << left << "" << "\t[2] Add New Client.\n";
@@ -199,12 +179,10 @@ public:
         cout << setw(37) << left << "" << "\t[6] Transactions.\n";
         cout << setw(37) << left << "" << "\t[7] Manage Users.\n";
         cout << setw(37) << left << "" << "\t[8] Login Register.\n";
-        cout << setw(37) << left << "" << "\t[9] Currency Exchange.\n";
-        cout << setw(37) << left << "" << "\t[10] Logout.\n";
+        cout << setw(37) << left << "" << "\t[9] Logout.\n";
         cout << setw(37) << left << "" << "===========================================\n";
 
-        _PerfromMainMenuOption((enMainMenuOptions)_ReadMainMenuOption());
+        _PerfromMainMenueOption((enMainMenueOptions)_ReadMainMenueOption());
     }
 
 };
-
