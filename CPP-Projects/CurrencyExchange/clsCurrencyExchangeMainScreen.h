@@ -1,9 +1,6 @@
 
-// Course #11 - OOP as it Should Be (Applications)
-// Lesson #44 Currency Calculator Screen
-//   (Project 04: Currency Exchange 06)
-
-// ** Mine **
+// Project: Currency Exchange
+// clsCurrencyExchangeMainScreen.h
 #pragma once
 
 #include "clsCurrenciesListScreen.h"
@@ -17,33 +14,29 @@ using namespace std;
 class clsCurrencyExchangeMainScreen: protected clsScreen  
 {
 private:
+	enum enCurrencyExchangeOption
+	{ 
+		eListCurrencies = 1, eFindCurrency = 2, 
+		eUpdateCurrencyRate = 3, eCurrencyCalculator = 4, eMainMenu = 5
+	};
+	
 	static void PrintCurrencyRecordLine(clsCurrency Currency)
 	{
-
 		cout << setw(8) << left << "" << "| " << setw(30) << left << Currency.Country();
 		cout << "| " << setw(8) << left << Currency.CurrencyCode();
 		cout << "| " << setw(45) << left << Currency.CurrencyName();
 		cout << "| " << setw(10) << left << Currency.Rate();
-
 	}
 
-	static short _ReadUserOption()
+	static short _ReadCurrenciesMainMenuOptions()
 	{
 		cout << "\t\tChoose what do you want to do ? [1 to 5] ?\n";
 		return clsInputValidate::ReadShortNumberBetween(1,5);
 	}
 
-	enum enCurrencyExchangeOption
-	{ 
-		
-		eListCurrencies = 1, eFindCurrency = 2, 
-		eUpdateRate = 3, eCurrencyCalculator = 4
-	};
-
-
-	static void _ShowListCurrenciesScreen()
+	static void _ShowCurrenciesListScreen()
 	{
-		clsListCurrenciesScreen::ShowListCurrenciesScreen();
+		clsListCurrenciesScreen::_ShowCurrenciesListScreen();
 	}
 
 	static void _ShowFindCurrencyScreen()
@@ -68,15 +61,14 @@ private:
 		ShowCurrencyExchangeMainScreen();
 	}
 
-
-	static void _PerformCurrencyExchangeOperation(enCurrencyExchangeOption Option)
+	static void _PerformCurrencyExchangeOperation(enCurrencyExchangeOption CurrenciesMainMenueOptions)
 	{
-		switch (Option)
+		switch (CurrenciesMainMenueOptions)
 		{
 		case enCurrencyExchangeOption::eListCurrencies:
 		{
 			system("cls");
-			_ShowListCurrenciesScreen();
+			_ShowCurrenciesListScreen();
 			_GoBackToCurrenciesMenuMessage();
 			break;
 		}
@@ -87,7 +79,7 @@ private:
 			_GoBackToCurrenciesMenuMessage();
 			break;
 		}
-		case enCurrencyExchangeOption::eUpdateRate:
+		case enCurrencyExchangeOption::eUpdateCurrencyRate:
 		{
 			system("cls");
 			 _ShowUpdateCurrencyRateScreen();
@@ -104,12 +96,13 @@ private:
 		//No need for "eMainMenu" as it will break out and back to the "main menu"!!!
 			
 		}
+
 	}
 	
 
 public:
 
-	static void ShowCurrencyExchangeMainScreen()
+	static void ShowCurrencyExchangeMainScreen() // <----- nammed ShowCurrenciesMenu
 	{
 		string Title = "Currency Exchange Main Screen";
 
@@ -126,7 +119,8 @@ public:
 		cout << "\t\t\t[5] Main Menu."			 << endl;
 
 		cout << "\t\t=========================================\t\n";
-		_PerformCurrencyExchangeOperation(enCurrencyExchangeOption(_ReadUserOption()));
+
+		_PerformCurrencyExchangeOperation(enCurrencyExchangeOption(_ReadCurrenciesMainMenuOptions()));
 
 	}
 

@@ -1,6 +1,5 @@
 // Project: Currency Exchange
 // clsCurrency.h
-
 #pragma once
 
 #include<iostream>
@@ -21,7 +20,6 @@ private:
 	float _Rate;
 
 	
-
 	static clsCurrency _ConvertCurrencyLineToObject(string Line, string Delim = "#//#")
 	{
 		vector<string> vLine;
@@ -31,8 +29,8 @@ private:
 			vLine[0], 
 			vLine[1], 
 			vLine[2],
-			stof(vLine[3])
-		);
+			stof(vLine[3])  );
+		
 	}
 
 	static string _ConvertCurrencyObjectToLine(clsCurrency Currency, string Delim = "#//#")
@@ -217,7 +215,6 @@ public:
 					return Currency;
 
 				}
-
 			}
 
 			MyFile.close();
@@ -244,7 +241,7 @@ public:
 	}
 
 	// Currency1 --> USD 
-	// USD-- > Currency2
+	// USD --> Currency2
 	float ConvertUSDToOtherCurrency(float Amount, clsCurrency Currency2)
 	{
 		float AmountInUSD = ConvertCurrencyToUSD(Amount);
@@ -255,7 +252,6 @@ public:
 		}
 
 		return (float) (Currency2.Rate() * AmountInUSD);
-
 	}
 
 };

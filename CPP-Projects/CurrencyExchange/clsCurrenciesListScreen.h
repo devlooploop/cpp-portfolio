@@ -22,7 +22,7 @@ private:
 
 
 public:
-	static void ShowListCurrenciesScreen()
+	static void _ShowCurrenciesListScreen()
 	{
 		vector<clsCurrency> vCurrencies =  clsCurrency::GetCurrenciesList();
 
