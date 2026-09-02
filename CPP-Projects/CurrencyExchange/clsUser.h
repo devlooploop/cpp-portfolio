@@ -686,6 +686,7 @@ public:
 
     static vector<stLoginRegisterRecord> GetLoginRegisterList()
     {
+
         vector<stLoginRegisterRecord> vLoginRegisterRecord;
 
         fstream MyFile;

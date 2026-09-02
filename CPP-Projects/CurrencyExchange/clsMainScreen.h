@@ -95,18 +95,6 @@ private:
         CurrentUser = clsUser::Find("", "");
     }
 
-    static bool _CheckPermission(clsUser::enPermissions Permission)
-    {
-        if (CurrentUser.CheckAccessPermission(Permission))
-            return true;
-
-        cout << "\n===========================================\n";
-        cout << "\tAccess Denied!\n";
-        cout << "\tYou don't have permission to access this screen.\n";
-        cout << "===========================================\n";
-
-        return false;
-    }
 
     static void _PerfromMainMenueOption(enMainMenueOptions MainMenueOption)
     {
@@ -114,7 +102,6 @@ private:
         {
         case enMainMenueOptions::eListClients:
         {
-
             system("cls");
             _ShowAllClientsScreen();
             _GoBackToMainMenue();
@@ -163,7 +150,6 @@ private:
 
         case enMainMenueOptions::eManageUsers:
         {
-
             system("cls");
             _ShowManageUsersMenu();
             _GoBackToMainMenue();
@@ -182,7 +168,7 @@ private:
         case enMainMenueOptions::eExit:
         {
             system("cls");
-           // _ShowEndScreen();
+
             _Logout();
             break;
         }

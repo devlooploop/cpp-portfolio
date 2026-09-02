@@ -1,3 +1,5 @@
+// clsLoginRegisterScreen.h
+
 #pragma once
 
 #include <iostream>
@@ -25,6 +27,11 @@ public:
   
     static void ShowLoginRegisterScreen()
     {
+
+        if (!CheckAccessRights(clsUser::enPermissions::pManageUsers))
+        {
+            return;
+        }
 
         vector <clsUser::stLoginRegisterRecord> vLoginRegisterRecord = clsUser::GetLoginRegisterList();
   
