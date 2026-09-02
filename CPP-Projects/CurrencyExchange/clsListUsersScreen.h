@@ -50,7 +50,6 @@ public:
 
             for (clsUser User : vUsers)
             {
-
                 _PrintUserRecordLine(User);
                 cout << endl;
             }

@@ -39,7 +39,7 @@ private:
 		int Permissions = 0;
 		char Access = 'n';
 
-		cout << "\nDo you want to give full access? y/n? ";
+		cout << "\nDo you want to give full access? y/n: ";
 		cin >> Access;
 
 		if (Access == 'y' || Access == 'Y')

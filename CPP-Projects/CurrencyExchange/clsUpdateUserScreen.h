@@ -50,7 +50,7 @@ private:
 		cin >> Answer;
 		if (Answer == 'y' || Answer == 'Y')
 		{
-			Permissions += clsUser::enPermissions::pDeleteUser;
+			Permissions += clsUser::enPermissions::pUpdateUser;
 		}
 
 		cout << "\nFind Client? y/n? ";
