@@ -1,4 +1,6 @@
 // Project: Bank System
+// clsUpdateUserScreen.h
+#pragma once
 
 #include <iostream>
 #include "clsUser.h"

@@ -10,10 +10,11 @@
 #include "clsFindCurrency.h"
 #include "clsUpdateCurrencyRateScreen.h"
 #include "clsCurrencyCalculatorScreen.h"
+#include <iomanip>
 
 using namespace std;
 
-class clsCurrencyExchangeMainScreen: protected clsScreen  // ** Mine **
+class clsCurrencyExchangeMainScreen: protected clsScreen  
 {
 private:
 	static void PrintCurrencyRecordLine(clsCurrency Currency)
@@ -32,7 +33,8 @@ private:
 		return clsInputValidate::ReadShortNumberBetween(1,5);
 	}
 
-	enum enCurrencyExchangeOption{ 
+	enum enCurrencyExchangeOption
+	{ 
 		
 		eListCurrencies = 1, eFindCurrency = 2, 
 		eUpdateRate = 3, eCurrencyCalculator = 4
@@ -41,25 +43,21 @@ private:
 
 	static void _ShowListCurrenciesScreen()
 	{
-		// cout << "here will be ListCurrencies Screen\n";
 		clsListCurrenciesScreen::ShowListCurrenciesScreen();
 	}
 
 	static void _ShowFindCurrencyScreen()
 	{
-		//cout << "here will be Find Currency Screen\n";
 		clsFindCurrency::ShowFindCurrencyScreen();
 	}
 
 	static void _ShowUpdateCurrencyRateScreen()
 	{
-		//cout << "here will be Update Rate Screen\n";
 		clsUpdateCurrencyRateScreen::ShowUpdateCurrencyRateScreen();
 	}
 
 	static void _ShowCurrencyCalculatorScreen()
 	{
-		//cout << "here will be CurrencyCalculator Screen\n";
 		clsCurrencyCalculatorScreen::ShowCurrencyCalculatorScreen();
 	}
 

@@ -1,3 +1,4 @@
+// clsMainScreen.h
 #pragma once
 
 #include <iostream>
@@ -158,7 +159,6 @@ private:
 
         case enMainMenueOptions::eLoginRegister:
         {
-
             system("cls");
             _ShowLoginRegisterScreen();
             _GoBackToMainMenue();

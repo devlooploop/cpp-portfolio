@@ -1,6 +1,7 @@
 // Project: Bank System
-
+// clsUpdateClientScreen.h
 #pragma once
+
 #include <iostream>
 #include "clsScreen.h"
 #include "clsPerson.h"
@@ -8,7 +9,6 @@
 #include "clsInputValidate.h"
 
 class clsUpdateClientScreen :protected clsScreen
-
 {
 private:
     
@@ -55,7 +55,7 @@ public:
     {
         if (!CheckAccessRights(clsUser::enPermissions::pUpdateUser))
         {
-            return;// this will exit the function and it will not continue
+            return;
         }
 
         _DrawScreenHeader("\tUpdate Client Screen");

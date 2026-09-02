@@ -1,5 +1,5 @@
 // Project: Bank System
-
+// clsTransferScreen.h
 #pragma once
 
 #include <iostream>
@@ -67,7 +67,6 @@ public:
 
 		clsBankClient ClientDestination = clsBankClient::Find(_ReadAccountNumber());
 		_PrintClientCard(ClientDestination);
-
 		
 		float Amount = _ReadAmount(ClientSource);
 	
@@ -78,13 +77,9 @@ public:
 		if (Answer == 'y' || Answer == 'Y')
 		{
 			if (ClientSource.Transfer(Amount, ClientDestination, CurrentUser.UserName))
-			{
 				cout << "\nOperation succeeded :-)\n";
-			}
 			else
-			{
 				cout << "\nTransfer Faild \n";
-			}
 		}
 
 		_PrintClientCard(ClientSource);

@@ -1,4 +1,5 @@
 // Project: Bank System
+// clsManageUsersScreen.h
 
 #pragma once
 #include <iostream>
@@ -38,31 +39,26 @@ private:
 
     static void _ShowListUsersScreen()
     {
-        //cout << "\nList Users Screen Will Be Here.\n";
         clsListUsersScreen::ShowUsersList();
     }
 
     static void _ShowAddNewUserScreen()
     {
-        // cout << "\nAdd New User Screen Will Be Here.\n";
         clsAddNewUsersScreen::ShowAddNewUserScreen();
     }
 
     static void _ShowDeleteUserScreen()
     {
-        // cout << "\nDelete User Screen Will Be Here.\n";
         clsDeleteUserScreen::ShowDeleteUserScreen();
     }
 
     static void _ShowUpdateUserScreen()
     {
-        // cout << "\nUpdate User Screen Will Be Here.\n";
         clsUpdateUserScreen::ShowUpdateUserScreen();
     }
 
     static void _ShowFindUserScreen()
     {
-        //cout << "\nFind User Screen Will Be Here.\n";
         clsFindUserScreen::ShowFindUserScreen();
     }
 
@@ -106,7 +102,6 @@ private:
         case enManageUsersMenueOptions::eFindUser:
         {
             system("cls");
-
             _ShowFindUserScreen();
             GoBackToManageUsersMenu();
             break;

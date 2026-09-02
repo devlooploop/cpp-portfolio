@@ -1,6 +1,7 @@
 // Project: Bank System
-
+// clsTransactionsScreen.h
 #pragma once
+
 #include <iostream>
 #include "clsScreen.h"
 #include "clsInputValidate.h"
@@ -33,29 +34,22 @@ private:
 
     static void _ShowDepositScreen()
     {
-        //cout << "\n Deposit Screen will be here.\n";
         clsDepositScreen::ShowDepositScreen();
     }
 
     static void _ShowWithdrawScreen()
     {
-        //cout << "\n Withdraw Screen will be here.\n";
         clsWithdrawScreen::ShowWithdrawScreen();
     }
 
     static void _ShowTotalBalancesScreen()
     {
-        // cout << "\n Balances Screen will be here.\n";
         clsTotalBalancesScreen::ShowTotalBalancesScreen();
-        
-
     }
 
     static void _ShowTransferScreen()
     {
-        //cout << "\n Transfer Screen will be here.\n";
         clsTransferScreen::ShowTransferScreen();
-
     }
 
     static void _GoBackToTransactionsMenue()
@@ -63,7 +57,6 @@ private:
         cout << "\n\nPress any key to go back to Transactions Menue...";
         system("pause>0");
         ShowTransactionsMenu();
-
     }
 
     static void _PerformTransactionsMenueOption(enTransactionsMenueOptions TransactionsMenueOption)
@@ -120,7 +113,7 @@ public:
 
         if (!CheckAccessRights(clsUser::enPermissions::pTranaction))
         {
-            return;// this will exit the function and it will not continue
+            return;
         }
 
         system("cls");

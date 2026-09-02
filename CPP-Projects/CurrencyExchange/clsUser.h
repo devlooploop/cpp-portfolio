@@ -1,3 +1,4 @@
+// clsUser.h
 #pragma once
 
 #include <iostream>
@@ -32,8 +33,7 @@ private:
 
     struct stLoginRegisterRecord;
 
-    static stLoginRegisterRecord _ConvertLoginRegisterLineToRecord(
-        string Line, string Seperator = "#//#")
+    static stLoginRegisterRecord _ConvertLoginRegisterLineToRecord(string Line, string Seperator = "#//#")
     {
         stLoginRegisterRecord LoginRegisterRecord;
 
@@ -49,13 +49,12 @@ private:
 
         LoginRegisterRecord.DateTime = LoginRegisterDataLine[0];
         LoginRegisterRecord.UserName = LoginRegisterDataLine[1];
-        LoginRegisterRecord.Password =
-            clsUtil::DecryptText(LoginRegisterDataLine[2]);
+        LoginRegisterRecord.Password = clsUtil::DecryptText(LoginRegisterDataLine[2]);
 
         try
         {
-            LoginRegisterRecord.Permissions =
-                stoi(LoginRegisterDataLine[3]);
+            LoginRegisterRecord.Permissions = stoi(LoginRegisterDataLine[3]);
+                
         }
         catch (...)
         {
@@ -73,8 +72,6 @@ private:
         LoginRecord += clsDate::GetSystemDateTimeString() + Seperator;
         LoginRecord += UserName + Seperator;
 
-        // We encrypt and store the encrypted password,
-        // not the real password.
         LoginRecord += clsUtil::EncryptText(Password) + Seperator;
 
         LoginRecord += to_string(Permissions);
@@ -94,15 +91,6 @@ private:
             clsString::Split(Line, Seperator);
 
         // A valid user record must contain 7 fields:
-        //
-        // 0 FirstName
-        // 1 LastName
-        // 2 Email
-        // 3 Phone
-        // 4 UserName
-        // 5 Password
-        // 6 Permissions
-
         if (vUserData.size() != 7)
         {
             return _GetEmptyUserObject();
@@ -119,16 +107,9 @@ private:
             return _GetEmptyUserObject();
         }
 
-        return clsUser(
-            enMode::UpdateMode,
-            vUserData[0],
-            vUserData[1],
-            vUserData[2],
-            vUserData[3],
-            vUserData[4],
-            clsUtil::DecryptText(vUserData[5]),
-            Permissions
-        );
+        return clsUser(enMode::UpdateMode, vUserData[0], vUserData[1], vUserData[2], vUserData[3], vUserData[4],
+            clsUtil::DecryptText(vUserData[5]), Permissions);
+
     }
 
 
@@ -136,8 +117,7 @@ private:
     // Convert User Object -> Line
     //===============================================================
 
-    static string _ConverUserObjectToLine(
-        clsUser User, string Seperator = "#//#")
+    static string _ConverUserObjectToLine(clsUser User, string Seperator = "#//#")
     {
         string UserRecord = "";
 
@@ -147,7 +127,6 @@ private:
         UserRecord += User.Phone + Seperator;
         UserRecord += User.UserName + Seperator;
 
-        // Encrypt password before storing it.
         UserRecord += clsUtil::EncryptText(User.Password) + Seperator;
 
         UserRecord += to_string(User.Permissions);
@@ -252,9 +231,7 @@ private:
 
     void _AddNew()
     {
-        _AddDataLineToFile(
-            _ConverUserObjectToLine(*this)
-        );
+        _AddDataLineToFile(_ConverUserObjectToLine(*this));
     }
 
 
@@ -279,16 +256,7 @@ private:
 
     static clsUser _GetEmptyUserObject()
     {
-        return clsUser(
-            enMode::EmptyMode,
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            0
-        );
+        return clsUser(enMode::EmptyMode, "", "", "", "", "", "", 0);
     }
 
 
@@ -335,16 +303,8 @@ public:
     // Constructor
     //===============================================================
 
-    clsUser(
-        enMode Mode,
-        string FirstName,
-        string LastName,
-        string Email,
-        string Phone,
-        string UserName,
-        string Password,
-        int Permissions)
-        : clsPerson(FirstName, LastName, Email, Phone)
+    clsUser( enMode Mode, string FirstName, string LastName, string Email, string Phone, string UserName, string Password, int Permissions)
+                    : clsPerson(FirstName, LastName, Email, Phone)
     {
         _Mode = Mode;
         _UserName = UserName;
@@ -387,9 +347,8 @@ public:
         _UserName = UserName;
     }
 
-    __declspec(property(get = GetUserName, put = SetUserName))
-        string UserName;
-
+    __declspec(property(get = GetUserName, put = SetUserName)) string UserName;
+        
 
     //===============================================================
     // Password
@@ -405,8 +364,8 @@ public:
         return _Password;
     }
 
-    __declspec(property(get = GetPassword, put = SetPassword))
-        string Password;
+    __declspec(property(get = GetPassword, put = SetPassword))  string Password;
+       
 
 
     //===============================================================
@@ -423,8 +382,7 @@ public:
         return _Permissions;
     }
 
-    __declspec(property(get = GetPermissions, put = SetPermissions))
-        int Permissions;
+    __declspec(property(get = GetPermissions, put = SetPermissions)) int Permissions;
 
 
     //===============================================================
@@ -553,7 +511,6 @@ public:
             {
                 return enSaveResults::svFaildUserExists;
             }
-
             else
             {
                 _AddNew();
@@ -617,16 +574,7 @@ public:
 
     static clsUser GetAddNewUserObject(string UserName)
     {
-        return clsUser(
-            enMode::AddNewMode,
-            "",
-            "",
-            "",
-            "",
-            UserName,
-            "",
-            0
-        );
+        return clsUser(AddNewMode, "", "", "", "", UserName, "", 0);
     }
 
 
@@ -703,19 +651,15 @@ public:
                 if (clsString::Trim(Line) == "")
                     continue;
 
-                vector<string> DataLine =
-                    clsString::Split(Line, "#//#");
+                vector<string> DataLine = clsString::Split(Line, "#//#");
 
                 // A login record must have 4 fields.
                 if (DataLine.size() != 4)
                     continue;
 
-                stLoginRegisterRecord LoginRegisterRecord =
-                    _ConvertLoginRegisterLineToRecord(Line);
+                stLoginRegisterRecord LoginRegisterRecord = _ConvertLoginRegisterLineToRecord(Line);
 
-                vLoginRegisterRecord.push_back(
-                    LoginRegisterRecord
-                );
+                vLoginRegisterRecord.push_back(LoginRegisterRecord);
             }
 
             MyFile.close();

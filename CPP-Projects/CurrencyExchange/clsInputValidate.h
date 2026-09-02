@@ -1,4 +1,5 @@
 // Project: Bank System
+// clsInputValidate.h
 
 #pragma once
 
@@ -40,41 +41,27 @@ public:
     // Is Date Between
     //===============================================================
 
-    static bool IsDateBetween(
-        clsDate Date,
-        clsDate From,
-        clsDate To)
+    static bool IsDateBetween(clsDate Date, clsDate From,clsDate To)
     {
         // Date >= From && Date <= To
 
-        if (
-            (
-                clsDate::IsDate1AfterDate2(Date, From) ||
-                clsDate::IsDate1EqualDate2(Date, From)
-                )
+        if ( (clsDate::IsDate1AfterDate2(Date, From) || clsDate::IsDate1EqualDate2(Date, From))
+                
             &&
-            (
-                clsDate::IsDate1BeforeDate2(Date, To) ||
-                clsDate::IsDate1EqualDate2(Date, To)
-                )
-            )
+            (clsDate::IsDate1BeforeDate2(Date, To) || clsDate::IsDate1EqualDate2(Date, To)))
         {
             return true;
         }
 
-
         // Date >= To && Date <= From
 
-        if (
-            (
-                clsDate::IsDate1AfterDate2(Date, To) ||
-                clsDate::IsDate1EqualDate2(Date, To)
-                )
-            &&
-            (
-                clsDate::IsDate1BeforeDate2(Date, From) ||
-                clsDate::IsDate1EqualDate2(Date, From)
-                )
+        
+        if ( (clsDate::IsDate1AfterDate2(Date, To) || clsDate::IsDate1EqualDate2(Date, To))
+                
+            && 
+            
+            (clsDate::IsDate1BeforeDate2(Date, From) || clsDate::IsDate1EqualDate2(Date, From)) 
+           
             )
         {
             return true;
@@ -89,8 +76,7 @@ public:
     // Read Short Number
     //===============================================================
 
-    static short ReadShortNumber(
-        string ErrorMessage = "Invalid Number, Enter again\n")
+    static short ReadShortNumber(string ErrorMessage = "Invalid Number, Enter again\n")
     {
         short Number;
 
@@ -98,11 +84,8 @@ public:
         {
             cin.clear();
 
-            cin.ignore(
-                numeric_limits<streamsize>::max(),
-                '\n'
-            );
-
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            
             cout << ErrorMessage;
         }
 
@@ -114,8 +97,7 @@ public:
     // Read Int Number
     //===============================================================
 
-    static int ReadIntNumber(
-        string ErrorMessage = "Invalid Number, Enter again\n")
+    static int ReadIntNumber(string ErrorMessage = "Invalid Number, Enter again\n")
     {
         int Number;
 
@@ -123,11 +105,8 @@ public:
         {
             cin.clear();
 
-            cin.ignore(
-                numeric_limits<streamsize>::max(),
-                '\n'
-            );
-
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            
             cout << ErrorMessage;
         }
 
@@ -139,11 +118,7 @@ public:
     // Read Short Number Between
     //===============================================================
 
-    static short ReadShortNumberBetween(
-        short From,
-        short To,
-        string ErrorMessage =
-        "Number is not within range, Enter again:\n")
+    static short ReadShortNumberBetween( short From, short To, string ErrorMessage = "Number is not within range, Enter again:\n")
     {
         short Number = ReadShortNumber();
 
@@ -162,11 +137,7 @@ public:
     // Read Int Number Between
     //===============================================================
 
-    static int ReadIntNumberBetween(
-        int From,
-        int To,
-        string ErrorMessage =
-        "Number is not within range, Enter again:\n")
+    static int ReadIntNumberBetween( int From, int To, string ErrorMessage = "Number is not within range, Enter again:\n")
     {
         int Number = ReadIntNumber();
 
@@ -180,13 +151,11 @@ public:
         return Number;
     }
 
-
     //===============================================================
     // Read Double Number
     //===============================================================
 
-    static double ReadDblNumber(
-        string ErrorMessage = "Invalid Number, Enter again\n")
+    static double ReadDblNumber( string ErrorMessage = "Invalid Number, Enter again\n")
     {
         double Number;
 
@@ -194,11 +163,8 @@ public:
         {
             cin.clear();
 
-            cin.ignore(
-                numeric_limits<streamsize>::max(),
-                '\n'
-            );
-
+            cin.ignore( numeric_limits<streamsize>::max(), '\n');
+            
             cout << ErrorMessage;
         }
 
@@ -210,11 +176,7 @@ public:
     // Read Double Number Between
     //===============================================================
 
-    static double ReadDblNumberBetween(
-        double From,
-        double To,
-        string ErrorMessage =
-        "Number is not within range, Enter again:\n")
+    static double ReadDblNumberBetween( double From, double To, string ErrorMessage = "Number is not within range, Enter again:\n")
     {
         double Number = ReadDblNumber();
 
@@ -228,16 +190,12 @@ public:
         return Number;
     }
 
-
     //===============================================================
     // Read Float Number
-    //
-    // Kept for compatibility with old code.
     // Internally it uses double now.
     //===============================================================
 
-    static double ReadFloatNumber(
-        string ErrorMessage = "Invalid Number, Enter again\n")
+    static double ReadFloatNumber(string ErrorMessage = "Invalid Number, Enter again\n")
     {
         double Number;
 
@@ -245,10 +203,7 @@ public:
         {
             cin.clear();
 
-            cin.ignore(
-                numeric_limits<streamsize>::max(),
-                '\n'
-            );
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
             cout << ErrorMessage;
         }
@@ -259,16 +214,10 @@ public:
 
     //===============================================================
     // Read Float Number Between
-    //
-    // Kept for compatibility with old code.
     // Internally it uses double now.
     //===============================================================
 
-    static double ReadFloatNumberBetween(
-        double From,
-        double To,
-        string ErrorMessage =
-        "Number is not within range, Enter again:\n")
+    static double ReadFloatNumberBetween(double From, double To, string ErrorMessage = "Number is not within range, Enter again:\n")
     {
         double Number = ReadFloatNumber();
 

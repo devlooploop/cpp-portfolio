@@ -28,8 +28,7 @@ private:
 	// Convert Line To Client Object
 	//===============================================================
 
-	static clsBankClient _ConvertLinetoClientObject(
-		string Line, string Seperator = "#//#")
+	static clsBankClient _ConvertLinetoClientObject(string Line, string Seperator = "#//#")
 	{
 		vector<string> vClientData =
 			clsString::Split(Line, Seperator);
@@ -66,9 +65,7 @@ private:
 	// Convert Client Object To Line
 	//===============================================================
 
-	static string _ConverClientObjectToLine(
-		clsBankClient Client,
-		string Seperator = "#//#")
+	static string _ConverClientObjectToLine(clsBankClient Client, string Seperator = "#//#")
 	{
 		string stClientRecord = "";
 
@@ -126,8 +123,7 @@ private:
 	// Save Clients To File
 	//===============================================================
 
-	static void _SaveCleintsDataToFile(
-		vector<clsBankClient> vClients)
+	static void _SaveCleintsDataToFile(vector<clsBankClient> vClients)
 	{
 		fstream MyFile;
 
@@ -233,26 +229,20 @@ private:
 
 		try
 		{
-			TrnsferLogRecord.DateTime =
-				vTrnsferLogRecordLine[0];
+			TrnsferLogRecord.DateTime = vTrnsferLogRecordLine[0];
 
-			TrnsferLogRecord.SourceAccountNumber =
-				vTrnsferLogRecordLine[1];
+			TrnsferLogRecord.SourceAccountNumber = vTrnsferLogRecordLine[1];
+				
+			TrnsferLogRecord.DestinationAccountNumber = vTrnsferLogRecordLine[2];
 
-			TrnsferLogRecord.DestinationAccountNumber =
-				vTrnsferLogRecordLine[2];
+			TrnsferLogRecord.Amount = stod(vTrnsferLogRecordLine[3]);
 
-			TrnsferLogRecord.Amount =
-				stod(vTrnsferLogRecordLine[3]);
+			TrnsferLogRecord.srcBalanceAfter = stod(vTrnsferLogRecordLine[4]);
+				
+			TrnsferLogRecord.destBalanceAfter = stod(vTrnsferLogRecordLine[5]);
 
-			TrnsferLogRecord.srcBalanceAfter =
-				stod(vTrnsferLogRecordLine[4]);
-
-			TrnsferLogRecord.destBalanceAfter =
-				stod(vTrnsferLogRecordLine[5]);
-
-			TrnsferLogRecord.UserName =
-				vTrnsferLogRecordLine[6];
+			TrnsferLogRecord.UserName = vTrnsferLogRecordLine[6];
+				
 		}
 		catch (...)
 		{
@@ -272,25 +262,20 @@ private:
 
 		string TransferLogRecord = "";
 
-		TransferLogRecord +=
-			clsDate::GetSystemDateTimeString() + Seperator;
+		TransferLogRecord += clsDate::GetSystemDateTimeString() + Seperator;
+			
+		TransferLogRecord += AccountNumber() + Seperator;
 
-		TransferLogRecord +=
-			AccountNumber() + Seperator;
+		TransferLogRecord += DestinationClient.AccountNumber() + Seperator;
 
-		TransferLogRecord +=
-			DestinationClient.AccountNumber() + Seperator;
+		TransferLogRecord += to_string(Amount) + Seperator;
 
-		TransferLogRecord +=
-			to_string(Amount) + Seperator;
+		TransferLogRecord += to_string(AccountBalance) + Seperator;
 
-		TransferLogRecord +=
-			to_string(AccountBalance) + Seperator;
-
-		TransferLogRecord +=
-			to_string(DestinationClient.AccountBalance) + Seperator;
-
+		TransferLogRecord += to_string(DestinationClient.AccountBalance) + Seperator;
+		
 		TransferLogRecord += UserName;
+
 
 		return TransferLogRecord;
 	}
@@ -341,20 +326,10 @@ public:
 	// Constructor
 	//===============================================================
 
-	clsBankClient(
-		enMode Mode,
-		string FirstName,
-		string LastName,
-		string Email,
-		string Phone,
-		string AccountNumber,
-		string PinCode,
-		double AccountBalance)
-		: clsPerson(
-			FirstName,
-			LastName,
-			Email,
-			Phone)
+	clsBankClient( enMode Mode, string FirstName, string LastName, string Email, string Phone, string AccountNumber,
+		string PinCode, double AccountBalance)
+			: clsPerson(FirstName, LastName, Email, Phone)
+
 	{
 		_Mode = Mode;
 		_AccountNumber = AccountNumber;
@@ -632,13 +607,10 @@ public:
 
 	bool Withdraw(double Amount)
 	{
-		if (Amount > _AccountBalance)
-		{
+		if (Amount <= 0 || Amount > _AccountBalance)
 			return false;
-		}
 
 		_AccountBalance -= Amount;
-
 		Save();
 
 		return true;
@@ -651,8 +623,7 @@ public:
 
 	static double GetTotalBalances()
 	{
-		vector<clsBankClient> vClients =
-			clsBankClient::GetClientsList();
+		vector<clsBankClient> vClients = clsBankClient::GetClientsList();
 
 		double TotalBalances = 0;
 
@@ -669,10 +640,7 @@ public:
 	// Transfer
 	//===============================================================
 
-	bool Transfer(
-		double Amount,
-		clsBankClient& DestinationClient,
-		string UserName)
+	bool Transfer(double Amount, clsBankClient& DestinationClient, string UserName)
 	{
 		// Don't allow transferring more than balance.
 		if (Amount > AccountBalance)
@@ -690,11 +658,7 @@ public:
 		DestinationClient.Deposit(Amount);
 
 		// Register transfer.
-		_RegisterTransferLog(
-			Amount,
-			DestinationClient,
-			UserName
-		);
+		_RegisterTransferLog(Amount, DestinationClient, UserName);
 
 		return true;
 	}
@@ -704,18 +668,14 @@ public:
 	// Get Transfers Log List
 	//===============================================================
 
-	static vector<stTrnsferLogRecord>
-		GetTransfersLogList()
+	static vector<stTrnsferLogRecord> GetTransfersLogList()
 	{
 		vector<stTrnsferLogRecord>
 			vTransferLogRecord;
 
 		fstream MyFile;
 
-		MyFile.open(
-			"TransfersLog.txt",
-			ios::in
-		);
+		MyFile.open("TransfersLog.txt", ios::in);
 
 		if (MyFile.is_open())
 		{
@@ -727,19 +687,16 @@ public:
 				if (clsString::Trim(Line) == "")
 					continue;
 
-				vector<string> DataLine =
-					clsString::Split(Line, "#//#");
+				vector<string> DataLine = clsString::Split(Line, "#//#");
 
 				// A valid transfer record has 7 fields.
 				if (DataLine.size() != 7)
 					continue;
 
-				stTrnsferLogRecord TransferRecord =
-					_ConvertTransferLogLineToRecord(Line);
+				stTrnsferLogRecord TransferRecord = _ConvertTransferLogLineToRecord(Line);
 
-				vTransferLogRecord.push_back(
-					TransferRecord
-				);
+				vTransferLogRecord.push_back(TransferRecord);
+				
 			}
 
 			MyFile.close();
