@@ -51,7 +51,10 @@ public:
 
         string delim = " "; // delimiter  
         short Counter = 0;
-        short pos = 0;
+
+        // short pos = 0; <===== changed to size_t() because string::find() returns size_t
+        size_t pos = 0;
+
         string sWord; // define a string variable  
 
         // use find() function to get the position of the delimiters  
@@ -311,7 +314,9 @@ public:
 
         vector<string> vString;
 
-        short pos = 0;
+        // short pos = 0; // <======= to "size_t"
+        size_t pos = 0;
+       
         string sWord; // define a string variable  
 
         // use find() function to get the position of the delimiters  

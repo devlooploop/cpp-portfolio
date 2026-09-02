@@ -57,7 +57,7 @@ public:
         cout << "\nPlease enter Withdraw amount? ";
         Amount = clsInputValidate::ReadDblNumber();
 
-        cout << "\nAre you sure you want to perform this transaction? ";
+        cout << "\nAre you sure you want to perform this transaction? y/n:";
         char Answer = 'n';
         cin >> Answer;
 
@@ -73,7 +73,6 @@ public:
                cout << "\nCannot withdraw, Insuffecient Balance!\n";
                cout << "\nAmout to withdraw is: " << Amount;
                cout << "\nYour Balance is: " << Client1.AccountBalance;
-               
            }
         }
         else

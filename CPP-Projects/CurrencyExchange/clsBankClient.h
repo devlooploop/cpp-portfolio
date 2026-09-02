@@ -1,4 +1,4 @@
-
+// clsBankClient.h
 #pragma once
 
 #include <iostream>
@@ -7,9 +7,9 @@
 #include "clsString.h"
 #include <vector>
 #include <fstream>
+#include "clsDate.h"
 
 using namespace std;
-
 
 class clsBankClient : public clsPerson
 {
@@ -20,23 +20,69 @@ private:
 
     string _AccountNumber;
     string _PinCode;
-    float _AccountBalance;
+    double _AccountBalance;
     bool _MarkedForDelete = false;
 
-    static clsBankClient _ConvertLinetoClientObject(string Line, string Seperator = "#//#")
+
+    //===============================================================
+    // Convert Line To Client Object
+    //===============================================================
+
+    static clsBankClient _ConvertLinetoClientObject(
+        string Line, string Seperator = "#//#")
     {
-        vector<string> vClientData;
-        vClientData = clsString::Split(Line, Seperator);
+        vector<string> vClientData =
+            clsString::Split(Line, Seperator);
 
-        return clsBankClient(enMode::UpdateMode, vClientData[0], vClientData[1], vClientData[2],
-            vClientData[3], vClientData[4], vClientData[5], stod(vClientData[6]));
+        // A valid client record must contain 7 fields:
+        //
+        // 0 FirstName
+        // 1 LastName
+        // 2 Email
+        // 3 Phone
+        // 4 AccountNumber
+        // 5 PinCode
+        // 6 AccountBalance
 
+        if (vClientData.size() != 7)
+        {
+            return _GetEmptyClientObject();
+        }
+
+        double AccountBalance;
+
+        try
+        {
+            AccountBalance = stod(vClientData[6]);
+        }
+        catch (...)
+        {
+            return _GetEmptyClientObject();
+        }
+
+        return clsBankClient(
+            enMode::UpdateMode,
+            vClientData[0],
+            vClientData[1],
+            vClientData[2],
+            vClientData[3],
+            vClientData[4],
+            vClientData[5],
+            AccountBalance
+        );
     }
 
-    static string _ConverClientObjectToLine(clsBankClient Client, string Seperator = "#//#")
-    {
 
+    //===============================================================
+    // Convert Client Object To Line
+    //===============================================================
+
+    static string _ConverClientObjectToLine(
+        clsBankClient Client,
+        string Seperator = "#//#")
+    {
         string stClientRecord = "";
+
         stClientRecord += Client.FirstName + Seperator;
         stClientRecord += Client.LastName + Seperator;
         stClientRecord += Client.Email + Seperator;
@@ -46,71 +92,87 @@ private:
         stClientRecord += to_string(Client.AccountBalance);
 
         return stClientRecord;
-
     }
 
-    static  vector <clsBankClient> _LoadClientsDataFromFile()
-    {
 
-        vector <clsBankClient> vClients;
+    //===============================================================
+    // Load Clients From File
+    //===============================================================
+
+    static vector<clsBankClient> _LoadClientsDataFromFile()
+    {
+        vector<clsBankClient> vClients;
 
         fstream MyFile;
-        MyFile.open("Clients.txt", ios::in);//read Mode
+        MyFile.open("Clients.txt", ios::in);
 
         if (MyFile.is_open())
         {
-
             string Line;
-
 
             while (getline(MyFile, Line))
             {
+                // Ignore empty or whitespace-only lines.
+                if (clsString::Trim(Line) == "")
+                    continue;
 
-                clsBankClient Client = _ConvertLinetoClientObject(Line);
+                clsBankClient Client =
+                    _ConvertLinetoClientObject(Line);
+
+                // Ignore malformed records.
+                if (Client.IsEmpty())
+                    continue;
 
                 vClients.push_back(Client);
             }
 
             MyFile.close();
-
         }
 
         return vClients;
-
     }
 
-    static void _SaveCleintsDataToFile(vector <clsBankClient> vClients)
+
+    //===============================================================
+    // Save Clients To File
+    //===============================================================
+
+    static void _SaveCleintsDataToFile(
+        vector<clsBankClient> vClients)
     {
-
         fstream MyFile;
-        MyFile.open("Clients.txt", ios::out);//overwrite
 
-        string DataLine;
+        // ios::out overwrites the existing file.
+        MyFile.open("Clients.txt", ios::out);
 
         if (MyFile.is_open())
         {
+            string DataLine;
 
             for (clsBankClient C : vClients)
             {
                 if (C.MarkedForDeleted() == false)
                 {
-                    //we only write records that are not marked for delete.  
-                    DataLine = _ConverClientObjectToLine(C);
+                    DataLine =
+                        _ConverClientObjectToLine(C);
+
                     MyFile << DataLine << endl;
-
                 }
-
             }
 
             MyFile.close();
-
         }
-
     }
+
+
+    //===============================================================
+    // Update
+    //===============================================================
 
     void _Update()
     {
-        vector <clsBankClient> _vClients;
+        vector<clsBankClient> _vClients;
+
         _vClients = _LoadClientsDataFromFile();
 
         for (clsBankClient& C : _vClients)
@@ -120,133 +182,270 @@ private:
                 C = *this;
                 break;
             }
-
         }
 
         _SaveCleintsDataToFile(_vClients);
-
     }
+
+
+    //===============================================================
+    // Add New
+    //===============================================================
 
     void _AddNew()
     {
-
-        _AddDataLineToFile(_ConverClientObjectToLine(*this));
+        _AddDataLineToFile(
+            _ConverClientObjectToLine(*this)
+        );
     }
 
-    void _AddDataLineToFile(string  stDataLine)
+
+    void _AddDataLineToFile(string stDataLine)
     {
         fstream MyFile;
-        MyFile.open("Clients.txt", ios::out | ios::app);
+
+        MyFile.open(
+            "Clients.txt",
+            ios::out | ios::app
+        );
 
         if (MyFile.is_open())
         {
-
             MyFile << stDataLine << endl;
 
             MyFile.close();
         }
-
     }
+
+
+    //===============================================================
+    // Get Empty Client Object
+    //===============================================================
 
     static clsBankClient _GetEmptyClientObject()
     {
-        return clsBankClient(enMode::EmptyMode, "", "", "", "", "", "", 0);
+        return clsBankClient(
+            enMode::EmptyMode,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            0
+        );
     }
+
+
+    //===============================================================
+    // Transfer Log
+    //===============================================================
 
     struct stTrnsferLogRecord;
 
-    static stTrnsferLogRecord _ConvertTransferLogLineToRecord(string Line, string Seperator = "#//#")
+
+    static stTrnsferLogRecord _ConvertTransferLogLineToRecord(
+        string Line, string Seperator = "#//#")
     {
         stTrnsferLogRecord TrnsferLogRecord;
 
-        vector <string> vTrnsferLogRecordLine = clsString::Split(Line, Seperator);
-        TrnsferLogRecord.DateTime = vTrnsferLogRecordLine[0];
-        TrnsferLogRecord.SourceAccountNumber = vTrnsferLogRecordLine[1];
-        TrnsferLogRecord.DestinationAccountNumber = vTrnsferLogRecordLine[2];
-        TrnsferLogRecord.Amount = stod(vTrnsferLogRecordLine[3]);
-        TrnsferLogRecord.srcBalanceAfter = stod(vTrnsferLogRecordLine[4]);
-        TrnsferLogRecord.destBalanceAfter = stod(vTrnsferLogRecordLine[5]);
-        TrnsferLogRecord.UserName = vTrnsferLogRecordLine[6];
+        vector<string> vTrnsferLogRecordLine =
+            clsString::Split(Line, Seperator);
+
+        // A valid transfer record must contain 7 fields.
+        //
+        // 0 DateTime
+        // 1 SourceAccountNumber
+        // 2 DestinationAccountNumber
+        // 3 Amount
+        // 4 SourceBalanceAfter
+        // 5 DestinationBalanceAfter
+        // 6 UserName
+
+        if (vTrnsferLogRecordLine.size() != 7)
+        {
+            return TrnsferLogRecord;
+        }
+
+        try
+        {
+            TrnsferLogRecord.DateTime =
+                vTrnsferLogRecordLine[0];
+
+            TrnsferLogRecord.SourceAccountNumber =
+                vTrnsferLogRecordLine[1];
+
+            TrnsferLogRecord.DestinationAccountNumber =
+                vTrnsferLogRecordLine[2];
+
+            TrnsferLogRecord.Amount =
+                stod(vTrnsferLogRecordLine[3]);
+
+            TrnsferLogRecord.srcBalanceAfter =
+                stod(vTrnsferLogRecordLine[4]);
+
+            TrnsferLogRecord.destBalanceAfter =
+                stod(vTrnsferLogRecordLine[5]);
+
+            TrnsferLogRecord.UserName =
+                vTrnsferLogRecordLine[6];
+        }
+        catch (...)
+        {
+            return stTrnsferLogRecord{};
+        }
 
         return TrnsferLogRecord;
-
     }
 
 
-    string _PrepareTransferLogRecord(float Amount, clsBankClient DestinationClient,
-        string UserName, string Seperator = "#//#")
+    //===============================================================
+    // Prepare Transfer Log Record
+    //===============================================================
+
+    string _PrepareTransferLogRecord(
+        double Amount,
+        clsBankClient DestinationClient,
+        string UserName,
+        string Seperator = "#//#")
     {
         string TransferLogRecord = "";
-        TransferLogRecord += clsDate::GetSystemDateTimeString() + Seperator;
-        TransferLogRecord += AccountNumber() + Seperator;
-        TransferLogRecord += DestinationClient.AccountNumber() + Seperator;
-        TransferLogRecord += to_string(Amount) + Seperator;
-        TransferLogRecord += to_string(AccountBalance) + Seperator;
-        TransferLogRecord += to_string(DestinationClient.AccountBalance) + Seperator;
+
+        TransferLogRecord +=
+            clsDate::GetSystemDateTimeString() + Seperator;
+
+        TransferLogRecord +=
+            AccountNumber() + Seperator;
+
+        TransferLogRecord +=
+            DestinationClient.AccountNumber() + Seperator;
+
+        TransferLogRecord +=
+            to_string(Amount) + Seperator;
+
+        TransferLogRecord +=
+            to_string(AccountBalance) + Seperator;
+
+        TransferLogRecord +=
+            to_string(DestinationClient.AccountBalance) + Seperator;
+
         TransferLogRecord += UserName;
+
         return TransferLogRecord;
     }
 
-    void _RegisterTransferLog(float Amount, clsBankClient DestinationClient, string UserName)
-    {
 
-        string stDataLine = _PrepareTransferLogRecord(Amount, DestinationClient, UserName);
+    //===============================================================
+    // Register Transfer Log
+    //===============================================================
+
+    void _RegisterTransferLog(
+        double Amount,
+        clsBankClient DestinationClient,
+        string UserName)
+    {
+        string stDataLine =
+            _PrepareTransferLogRecord(
+                Amount,
+                DestinationClient,
+                UserName
+            );
 
         fstream MyFile;
-        MyFile.open("TransfersLog.txt", ios::out | ios::app);
+
+        MyFile.open(
+            "TransfersLog.txt",
+            ios::out | ios::app
+        );
 
         if (MyFile.is_open())
         {
-
             MyFile << stDataLine << endl;
 
             MyFile.close();
         }
-
     }
 
+
 public:
+
+    //===============================================================
+    // Transfer Log Record
+    //===============================================================
 
     struct stTrnsferLogRecord
     {
         string DateTime;
         string SourceAccountNumber;
         string DestinationAccountNumber;
-        float Amount;
-        float srcBalanceAfter;
-        float destBalanceAfter;
-        string UserName;
 
+        double Amount;
+        double srcBalanceAfter;
+        double destBalanceAfter;
+
+        string UserName;
     };
 
 
-    clsBankClient(enMode Mode, string FirstName, string LastName,
-        string Email, string Phone, string AccountNumber, string PinCode,
-        float AccountBalance) :
-        clsPerson(FirstName, LastName, Email, Phone)
+    //===============================================================
+    // Constructor
+    //===============================================================
 
+    clsBankClient(
+        enMode Mode,
+        string FirstName,
+        string LastName,
+        string Email,
+        string Phone,
+        string AccountNumber,
+        string PinCode,
+        double AccountBalance)
+        : clsPerson(
+            FirstName,
+            LastName,
+            Email,
+            Phone)
     {
         _Mode = Mode;
         _AccountNumber = AccountNumber;
         _PinCode = PinCode;
         _AccountBalance = AccountBalance;
-
     }
+
+
+    //===============================================================
+    // Is Empty
+    //===============================================================
 
     bool IsEmpty()
     {
         return (_Mode == enMode::EmptyMode);
     }
 
+
+    //===============================================================
+    // Marked For Delete
+    //===============================================================
+
     bool MarkedForDeleted()
     {
         return _MarkedForDelete;
     }
 
+
+    //===============================================================
+    // Account Number
+    //===============================================================
+
     string AccountNumber()
     {
         return _AccountNumber;
     }
+
+
+    //===============================================================
+    // Pin Code
+    //===============================================================
 
     void SetPinCode(string PinCode)
     {
@@ -257,107 +456,155 @@ public:
     {
         return _PinCode;
     }
-    __declspec(property(get = GetPinCode, put = SetPinCode)) string PinCode;
 
-    void SetAccountBalance(float AccountBalance)
+    __declspec(property(get = GetPinCode, put = SetPinCode))
+        string PinCode;
+
+
+    //===============================================================
+    // Account Balance
+    //===============================================================
+
+    void SetAccountBalance(double AccountBalance)
     {
         _AccountBalance = AccountBalance;
     }
 
-    float GetAccountBalance()
+    double GetAccountBalance()
     {
         return _AccountBalance;
     }
-    __declspec(property(get = GetAccountBalance, put = SetAccountBalance)) float AccountBalance;
 
+    __declspec(property(get = GetAccountBalance, put = SetAccountBalance))
+        double AccountBalance;
+
+
+    //===============================================================
+    // Find By Account Number
+    //===============================================================
 
     static clsBankClient Find(string AccountNumber)
     {
-
-
         fstream MyFile;
-        MyFile.open("Clients.txt", ios::in);//read Mode
+
+        MyFile.open("Clients.txt", ios::in);
 
         if (MyFile.is_open())
         {
             string Line;
+
             while (getline(MyFile, Line))
             {
-                clsBankClient Client = _ConvertLinetoClientObject(Line);
+                // Ignore empty or whitespace-only lines.
+                if (clsString::Trim(Line) == "")
+                    continue;
+
+                clsBankClient Client =
+                    _ConvertLinetoClientObject(Line);
+
+                // Ignore malformed records.
+                if (Client.IsEmpty())
+                    continue;
+
                 if (Client.AccountNumber() == AccountNumber)
                 {
                     MyFile.close();
+
                     return Client;
                 }
-
             }
 
             MyFile.close();
-
         }
 
         return _GetEmptyClientObject();
     }
 
-    static clsBankClient Find(string AccountNumber, string PinCode)
+
+    //===============================================================
+    // Find By Account Number + Pin Code
+    //===============================================================
+
+    static clsBankClient Find(
+        string AccountNumber,
+        string PinCode)
     {
-
-
-
         fstream MyFile;
-        MyFile.open("Clients.txt", ios::in);//read Mode
+
+        MyFile.open("Clients.txt", ios::in);
 
         if (MyFile.is_open())
         {
             string Line;
+
             while (getline(MyFile, Line))
             {
-                clsBankClient Client = _ConvertLinetoClientObject(Line);
-                if (Client.AccountNumber() == AccountNumber && Client.PinCode == PinCode)
+                // Ignore empty or whitespace-only lines.
+                if (clsString::Trim(Line) == "")
+                    continue;
+
+                clsBankClient Client =
+                    _ConvertLinetoClientObject(Line);
+
+                // Ignore malformed records.
+                if (Client.IsEmpty())
+                    continue;
+
+                if (Client.AccountNumber() == AccountNumber &&
+                    Client.PinCode == PinCode)
                 {
                     MyFile.close();
+
                     return Client;
                 }
-
             }
 
             MyFile.close();
-
         }
+
         return _GetEmptyClientObject();
     }
 
-    enum enSaveResults { svFaildEmptyObject = 0, svSucceeded = 1, svFaildAccountNumberExists = 2 };
+
+    //===============================================================
+    // Save Results
+    //===============================================================
+
+    enum enSaveResults
+    {
+        svFaildEmptyObject = 0,
+        svSucceeded = 1,
+        svFaildAccountNumberExists = 2
+    };
+
+
+    //===============================================================
+    // Save
+    //===============================================================
+
     enSaveResults Save()
     {
-
         switch (_Mode)
         {
         case enMode::EmptyMode:
         {
             if (IsEmpty())
             {
-
                 return enSaveResults::svFaildEmptyObject;
-
             }
-
-        }
-
-        case enMode::UpdateMode:
-        {
-
-
-            _Update();
-
-            return enSaveResults::svSucceeded;
 
             break;
         }
 
+        case enMode::UpdateMode:
+        {
+            _Update();
+
+            return enSaveResults::svSucceeded;
+        }
+
         case enMode::AddNewMode:
         {
-            //This will add new record to file or database
             if (clsBankClient::IsClientExist(_AccountNumber))
             {
                 return enSaveResults::svFaildAccountNumberExists;
@@ -366,29 +613,40 @@ public:
             {
                 _AddNew();
 
-                //We need to set the mode to update after add new
+                // After adding the client,
+                // change mode to UpdateMode.
                 _Mode = enMode::UpdateMode;
+
                 return enSaveResults::svSucceeded;
             }
-
-            break;
         }
         }
 
-
-
+        return enSaveResults::svFaildEmptyObject;
     }
+
+
+    //===============================================================
+    // Is Client Exist
+    //===============================================================
 
     static bool IsClientExist(string AccountNumber)
     {
+        clsBankClient Client1 =
+            clsBankClient::Find(AccountNumber);
 
-        clsBankClient Client1 = clsBankClient::Find(AccountNumber);
         return (!Client1.IsEmpty());
     }
 
+
+    //===============================================================
+    // Delete
+    //===============================================================
+
     bool Delete()
     {
-        vector <clsBankClient> _vClients;
+        vector<clsBankClient> _vClients;
+
         _vClients = _LoadClientsDataFromFile();
 
         for (clsBankClient& C : _vClients)
@@ -396,9 +654,9 @@ public:
             if (C.AccountNumber() == _AccountNumber)
             {
                 C._MarkedForDelete = true;
+
                 break;
             }
-
         }
 
         _SaveCleintsDataToFile(_vClients);
@@ -406,26 +664,54 @@ public:
         *this = _GetEmptyClientObject();
 
         return true;
-
     }
 
-    static clsBankClient GetAddNewClientObject(string AccountNumber)
+
+    //===============================================================
+    // Get Add New Client Object
+    //===============================================================
+
+    static clsBankClient GetAddNewClientObject(
+        string AccountNumber)
     {
-        return clsBankClient(enMode::AddNewMode, "", "", "", "", AccountNumber, "", 0);
+        return clsBankClient(
+            enMode::AddNewMode,
+            "",
+            "",
+            "",
+            "",
+            AccountNumber,
+            "",
+            0
+        );
     }
 
-    static vector <clsBankClient> GetClientsList()
+
+    //===============================================================
+    // Get Clients List
+    //===============================================================
+
+    static vector<clsBankClient> GetClientsList()
     {
         return _LoadClientsDataFromFile();
     }
 
 
+    //===============================================================
+    // Deposit
+    //===============================================================
+
     void Deposit(double Amount)
     {
         _AccountBalance += Amount;
+
         Save();
     }
 
+
+    //===============================================================
+    // Withdraw
+    //===============================================================
 
     bool Withdraw(double Amount)
     {
@@ -433,73 +719,116 @@ public:
         {
             return false;
         }
-        else
-        {
-            _AccountBalance -= Amount;
-            Save();
-        }
 
+        _AccountBalance -= Amount;
+
+        Save();
+
+        return true;
     }
+
+
+    //===============================================================
+    // Get Total Balances
+    //===============================================================
 
     static double GetTotalBalances()
     {
-        vector <clsBankClient> vClients = clsBankClient::GetClientsList();
+        vector<clsBankClient> vClients =
+            clsBankClient::GetClientsList();
 
         double TotalBalances = 0;
 
         for (clsBankClient Client : vClients)
         {
-
             TotalBalances += Client.AccountBalance;
         }
 
         return TotalBalances;
     }
 
-    bool Transfer(float Amount, clsBankClient& DestinationClient, string UserName)
+
+    //===============================================================
+    // Transfer
+    //===============================================================
+
+    bool Transfer(
+        double Amount,
+        clsBankClient& DestinationClient,
+        string UserName)
     {
+        // Don't allow transferring more than balance.
         if (Amount > AccountBalance)
         {
             return false;
         }
 
-        Withdraw(Amount);
+        // Withdraw first.
+        if (!Withdraw(Amount))
+        {
+            return false;
+        }
+
+        // Deposit into destination.
         DestinationClient.Deposit(Amount);
-        _RegisterTransferLog(Amount, DestinationClient, UserName);
+
+        // Register transfer.
+        _RegisterTransferLog(
+            Amount,
+            DestinationClient,
+            UserName
+        );
 
         return true;
     }
 
-    static  vector <stTrnsferLogRecord> GetTransfersLogList()
+
+    //===============================================================
+    // Get Transfers Log List
+    //===============================================================
+
+    static vector<stTrnsferLogRecord>
+        GetTransfersLogList()
     {
-        vector <stTrnsferLogRecord> vTransferLogRecord;
+        vector<stTrnsferLogRecord>
+            vTransferLogRecord;
 
         fstream MyFile;
-        MyFile.open("TransfersLog.txt", ios::in);//read Mode
+
+        MyFile.open(
+            "TransfersLog.txt",
+            ios::in
+        );
 
         if (MyFile.is_open())
         {
-
             string Line;
-
-            stTrnsferLogRecord TransferRecord;
 
             while (getline(MyFile, Line))
             {
+                // Ignore empty or whitespace-only lines.
+                if (clsString::Trim(Line) == "")
+                    continue;
 
-                TransferRecord = _ConvertTransferLogLineToRecord(Line);
+                vector<string> DataLine =
+                    clsString::Split(Line, "#//#");
 
-                vTransferLogRecord.push_back(TransferRecord);
+                // A valid transfer record has 7 fields.
+                if (DataLine.size() != 7)
+                    continue;
 
+                stTrnsferLogRecord TransferRecord =
+                    _ConvertTransferLogLineToRecord(Line);
+
+                vTransferLogRecord.push_back(
+                    TransferRecord
+                );
             }
 
             MyFile.close();
-
         }
 
         return vTransferLogRecord;
-
     }
-
 
 };

@@ -71,7 +71,7 @@ public:
 		
 		float Amount = _ReadAmount(ClientSource);
 	
-		cout << "\nAre you sure to perform this operation? ";
+		cout << "\nAre you sure to perform this operation? y/n:";
 		char Answer = 'n';
 		cin >> Answer;
 

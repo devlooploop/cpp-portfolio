@@ -35,7 +35,7 @@ private:
 
     static  void _GoBackToMainMenue()
     {
-        cout << setw(37) << left << "" << "\n\tPress any key to go back to Main Menue...\n";
+        cout << setw(37) << left << "" << "\n\tPress any key to go back to Main menu...\n";
 
         system("pause>0");
         ShowMainMenu();
@@ -73,13 +73,13 @@ private:
 
     static void _ShowTransactionsMenu()
     {
-        // cout << "\nTransactions Menue Will be here...\n";
+        // cout << "\nTransactions menu Will be here...\n";
         clsTransactionsScreen::ShowTransactionsMenu();
     }
 
-    static void _ShowManageUsersMenue()
+    static void _ShowManageUsersMenu()
     {
-        // cout << "\nUsers Menue Will be here...\n";
+        // cout << "\nUsers Menu Will be here...\n";
         clsManageUsersScreen::ShowManageUsersMenu();
     }
 
@@ -139,7 +139,7 @@ private:
 
         case enMainMenueOptions::eManageUsers:
             system("cls");
-            _ShowManageUsersMenue();
+            _ShowManageUsersMenu();
             _GoBackToMainMenue();
             break;
 

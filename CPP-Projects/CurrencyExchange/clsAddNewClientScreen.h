@@ -53,7 +53,7 @@ public:
 
     static void ShowAddNewClientScreen()
     {
-        // in clsUser at enPermissions change its enum members from "Client" to "user" as needed 
+        
         if (!CheckAccessRights(clsUser::enPermissions::pAddNewUser))
         {
             return;// this will exit the function and it will not continue
