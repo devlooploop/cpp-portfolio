@@ -22,7 +22,8 @@ class clsMainScreen : protected clsScreen
 {
 private:
 
-    enum enMainMenuOptions {
+    enum enMainMenuOptions 
+    {
         eListClients = 1,
         eAddNewClient = 2,
         eDeleteClient = 3,

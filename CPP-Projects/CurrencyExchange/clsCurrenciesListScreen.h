@@ -1,7 +1,7 @@
 // Project: Currency Exchange
 // clsListCurrenciesScreen.h
-
 #pragma once
+
 #include "clsScreen.h"
 #include "clsCurrency.h"
 #include <vector>
@@ -17,7 +17,6 @@ private:
 		cout << "| " << setw(8) << left << Currency.CurrencyCode();
 		cout << "| " << setw(40) << left << Currency.CurrencyName();
 		cout << "| " << setw(10) << left << Currency.Rate() << endl;
-
 	}
 
 

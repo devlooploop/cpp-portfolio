@@ -117,11 +117,9 @@ public:
 		cout << "\t\t\t[3] Update Rate."		 << endl;
 		cout << "\t\t\t[4] Currency Calculator." << endl;
 		cout << "\t\t\t[5] Main Menu."			 << endl;
-
 		cout << "\t\t=========================================\t\n";
 
 		_PerformCurrencyExchangeOperation(enCurrencyExchangeOption(_ReadCurrenciesMainMenuOptions()));
-
 	}
 
 };

@@ -1,4 +1,6 @@
 // Project: Bank System
+// clsAddNewUsersScreen.h
+#pragma once
 
 #include <iostream>
 #include "clsScreen.h"
@@ -33,7 +35,6 @@ private:
 		User.Permissions = _ReadPermissionsToSet();
 	}
 
-
 	static int _ReadPermissionsToSet()
 	{
 		int Permissions = 0;
@@ -47,9 +48,8 @@ private:
 			return -1;
 		}
 
-
 		char Answer = 'n';
-		cout << "\nDo you want to give access to:\n";
+		cout << "\nDo you want to give access to:\n ";
 
 		cout << "Show Client List? y/n? ";
 		cin >> Answer;
@@ -105,6 +105,13 @@ private:
 		if (Answer == 'y' || Answer == 'Y')
 		{
 			Permissions += clsUser::enPermissions::pShowLoginRegisterList;
+		}
+
+		cout << "\nShow Currency Exchange Screen? y/n? ";
+		cin >> Answer;
+		if (Answer == 'y' || Answer == 'Y')
+		{
+			Permissions += clsUser::enPermissions::pCurrencyExchange;
 		}
 
 		return Permissions;

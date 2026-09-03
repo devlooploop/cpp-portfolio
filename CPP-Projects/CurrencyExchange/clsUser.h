@@ -282,7 +282,8 @@ public:
         pFindUser = 16,
         pTranaction = 32,
         pManageUsers = 64,
-        pShowLoginRegisterList = 128
+        pShowLoginRegisterList = 128,
+        pCurrencyExchange = 256
     };
 
 

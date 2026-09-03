@@ -59,7 +59,6 @@ private:
 
 			while (getline(MyFile, Line))
 			{
-
 				clsCurrency Currency = _ConvertCurrencyLineToObject(Line);
 
 				vCurrencies.push_back(Currency);
@@ -87,7 +86,6 @@ private:
 			}
 
 			MyFile.close();
-
 		}
 	}
 
@@ -167,7 +165,6 @@ public:
 
 		fstream MyFile;
 		MyFile.open("Currencies.txt", ios::in); // read mode
-
 		
 		if (MyFile.is_open())
 		{
@@ -183,7 +180,6 @@ public:
 					return Currency;
 
 				}
-
 			}
 
 			MyFile.close();
@@ -206,14 +202,12 @@ public:
 			string Line;
 			while (getline(MyFile, Line))
 			{
-
 				clsCurrency Currency = _ConvertCurrencyLineToObject(Line);
 
 				if (clsString::UpperAllString(Currency.Country()) == Country)
 				{
 					MyFile.close();
 					return Currency;
-
 				}
 			}
 
