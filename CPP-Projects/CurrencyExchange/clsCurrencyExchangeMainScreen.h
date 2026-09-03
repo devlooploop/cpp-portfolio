@@ -4,7 +4,7 @@
 #pragma once
 
 #include "clsCurrenciesListScreen.h"
-#include "clsFindCurrency.h"
+#include "clsFindCurrencyScreen.h"
 #include "clsUpdateCurrencyRateScreen.h"
 #include "clsCurrencyCalculatorScreen.h"
 #include <iomanip>
@@ -41,7 +41,7 @@ private:
 
 	static void _ShowFindCurrencyScreen()
 	{
-		clsFindCurrency::ShowFindCurrencyScreen();
+		clsFindCurrencyScreen::ShowFindCurrencyScreen();
 	}
 
 	static void _ShowUpdateCurrencyRateScreen()

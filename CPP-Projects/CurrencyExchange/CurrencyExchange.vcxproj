@@ -156,7 +156,6 @@
     <ClInclude Include="clsFindClientScreen.h" />
     <ClInclude Include="clsFindUserScreen.h" />
     <ClInclude Include="clsInputValidate.h" />
-    <ClInclude Include="clsListCurrenciesScreen.h" />
     <ClInclude Include="clsListUsersScreen.h" />
     <ClInclude Include="clsLoginScreen.h" />
     <ClInclude Include="clsManageUsersScreen.h" />
@@ -184,7 +183,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="clsCurrencyExchangeMainScreen.h" />
-    <None Include="clsFindCurrency.h" />
+    <None Include="clsFindCurrencyScreen.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Screenshots\01-login.png" />
+    <Image Include="Screenshots\02-main-menu_client-management.png" />
+    <Image Include="Screenshots\03-transactions.png" />
+    <Image Include="Screenshots\04-manage-users.png" />
+    <Image Include="Screenshots\05-loginRegister.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

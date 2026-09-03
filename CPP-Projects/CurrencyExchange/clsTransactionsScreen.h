@@ -18,7 +18,8 @@ class clsTransactionsScreen :protected clsScreen
 {
 
 private:
-    enum enTransactionsMenuOptions {
+    enum enTransactionsMenuOptions 
+    {
         eDeposit = 1, eWithdraw = 2,
         eShowTotalBalance = 3, eTransfer = 4,
         eShowMainMenu = 5

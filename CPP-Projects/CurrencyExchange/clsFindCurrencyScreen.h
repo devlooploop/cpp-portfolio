@@ -8,7 +8,7 @@
 
 using namespace std;
 
-class clsFindCurrency : protected clsScreen 
+class clsFindCurrencyScreen : protected clsScreen 
 {
 private:
 
