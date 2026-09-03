@@ -24,7 +24,7 @@
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\Downloads\ATM_Main_Menu_Screen.png">
+    <Image Include="Screenshots\ATM_Main_Menu_Screen.png">
       <Filter>Screenshots</Filter>
     </Image>
   </ItemGroup>

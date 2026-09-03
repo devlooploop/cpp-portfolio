@@ -145,7 +145,7 @@
     <Text Include="Clients.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\Downloads\ATM_Main_Menu_Screen.png" />
+    <Image Include="Screenshots\ATM_Main_Menu_Screen.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -16,13 +16,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\..\Pictures\Screenshots\MathGame\1-Math-Game-Welcome-Screen.png">
+    <Image Include="Screenshots\1-Math-Game-Welcome-Screen.png">
       <Filter>Screenshots</Filter>
     </Image>
-    <Image Include="..\..\..\..\..\Pictures\Screenshots\MathGame\2-Right-Answer-Screen.png">
+    <Image Include="Screenshots\2-Right-Answer-Screen.png">
       <Filter>Screenshots</Filter>
     </Image>
-    <Image Include="..\..\..\..\..\Pictures\Screenshots\MathGame\3-Wrong-Answer-Screen.png">
+    <Image Include="Screenshots\3-Wrong-Answer-Screen.png">
       <Filter>Screenshots</Filter>
     </Image>
   </ItemGroup>
