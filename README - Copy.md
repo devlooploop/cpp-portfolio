@@ -19,11 +19,6 @@ The projects demonstrate concepts such as **Object-Oriented Programming (OOP), f
 ```text
 CPP-Projects/
 
-├── 01-CurrencyExchange-Bank-Management/
-│   ├── *.cpp
-│   ├── *.h
-│   ├── Clients.txt
-│   └── Users.txt
 ├── 01-Bank-Management-System-cpp/
 │   ├── *.cpp
 │   ├── *.h
