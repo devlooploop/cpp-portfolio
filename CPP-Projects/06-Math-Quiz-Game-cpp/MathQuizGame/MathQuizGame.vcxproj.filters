@@ -5,26 +5,24 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Data">
+    <Filter Include="Screenshots">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Screenshots">
-      <UniqueIdentifier>{c146fb8c-3fd2-4ebc-88ba-be7ffcf04c8c}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="02-ATM-Simulator.cpp">
+    <ClCompile Include="MathQuizGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Clients.txt">
-      <Filter>Data</Filter>
-    </Text>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\..\..\Downloads\ATM_Main_Menu_Screen.png">
+    <Image Include="..\..\..\..\..\Pictures\Screenshots\MathGame\1-Math-Game-Welcome-Screen.png">
+      <Filter>Screenshots</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\Pictures\Screenshots\MathGame\2-Right-Answer-Screen.png">
+      <Filter>Screenshots</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\Pictures\Screenshots\MathGame\3-Wrong-Answer-Screen.png">
       <Filter>Screenshots</Filter>
     </Image>
   </ItemGroup>

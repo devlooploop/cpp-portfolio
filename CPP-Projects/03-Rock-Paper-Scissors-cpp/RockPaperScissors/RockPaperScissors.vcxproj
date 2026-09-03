@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{9c93c8a8-814f-4a4b-816a-b0d130321a39}</ProjectGuid>
-    <RootNamespace>My02ATMSimulator</RootNamespace>
+    <ProjectGuid>{f06fb78f-304d-4a6b-a1e5-92fbe0e1ae3c}</ProjectGuid>
+    <RootNamespace>RockPaperScissors</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,13 +139,15 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="02-ATM-Simulator.cpp" />
+    <ClCompile Include="RockPaperScissors.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Clients.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\..\..\Downloads\ATM_Main_Menu_Screen.png" />
+    <Image Include="..\Screenshots\1-Stone_Paper_Scissors_Welcome_Screen.png" />
+    <Image Include="..\Screenshots\2-How_Many_Rounds_Screen.png" />
+    <Image Include="..\Screenshots\3-Winner_Screen.png" />
+    <Image Include="..\Screenshots\4-Draw_Screen.png" />
+    <Image Include="..\Screenshots\5-Computer_Wins_Screen.png" />
+    <Image Include="..\Screenshots\6-Game_Result_Screen.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

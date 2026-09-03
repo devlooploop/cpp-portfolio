@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{9c93c8a8-814f-4a4b-816a-b0d130321a39}</ProjectGuid>
-    <RootNamespace>My02ATMSimulator</RootNamespace>
+    <ProjectGuid>{d5ce78bd-c8a8-48c9-b510-a5858a412886}</ProjectGuid>
+    <RootNamespace>MathQuizGame</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,13 +139,12 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="02-ATM-Simulator.cpp" />
+    <ClCompile Include="MathQuizGame.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Clients.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\..\..\Downloads\ATM_Main_Menu_Screen.png" />
+    <Image Include="..\..\..\..\..\Pictures\Screenshots\MathGame\1-Math-Game-Welcome-Screen.png" />
+    <Image Include="..\..\..\..\..\Pictures\Screenshots\MathGame\2-Right-Answer-Screen.png" />
+    <Image Include="..\..\..\..\..\Pictures\Screenshots\MathGame\3-Wrong-Answer-Screen.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
