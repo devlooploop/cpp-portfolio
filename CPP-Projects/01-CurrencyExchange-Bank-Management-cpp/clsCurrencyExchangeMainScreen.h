@@ -104,6 +104,11 @@ public:
 
 	static void ShowCurrencyExchangeMainScreen() // <----- nammed ShowCurrenciesMenu
 	{
+		if (!CheckAccessRights(clsUser::enPermissions::pCurrencyExchange))
+		{
+			return;// this will exit the function and it will not continue
+		}
+
 		string Title = "Currency Exchange Main Screen";
 
 		system("cls");
