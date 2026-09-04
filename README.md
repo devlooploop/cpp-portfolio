@@ -172,6 +172,7 @@ The project uses text files for persistent data:
 ![Transactions](CPP-Projects/Screenshots/03-transactions_CurrencyExchange.png)
 ![Manage Users](CPP-Projects/Screenshots/04-manage-users_CurrencyExchange.png)
 ![login Register](CPP-Projects/Screenshots/05-loginRegister_CurrencyExchange.png)
+![Currency Exchange Main Screen](CPP-Projects/Screenshots/06-Currency-Exchange-Main-Screen)
 
 ## 02 – ATM Simulator
 
@@ -229,7 +230,7 @@ Note: These credentials are provided for demonstration purposes for this portfol
 
 ### 📸 Screenshots: ATM Simulator
 
-![ATM Main Menu Screen](CPP-Projects/Screenshots/06-ATM_Main_Menu_Screen.png)
+![ATM Main Menu Screen](CPP-Projects/Screenshots/6-ATM_Main_Menu_Screen.png)
 
 ## 03 – Rock Paper Scissors
 
