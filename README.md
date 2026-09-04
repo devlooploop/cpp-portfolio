@@ -169,7 +169,7 @@ The project uses text files for persistent data:
 
 | Bank Login | Main Menu | Transactions |
 | --- | --- | --- |
-| ![Bank Login](CPP-Projects/screenshots/01-login_CurrencyExchange.png01-login_CurrencyExchange.png) | ![Main Menu](screenshots/02-main-menu_client-management_CurrencyExchange.png) | ![Transactions](screenshots/03-transactions_CurrencyExchange.png) |
+| ![Bank Login](CPP-Projects/Screenshots/01-login_CurrencyExchange.png) | ![Main Menu](screenshots/02-main-menu_client-management_CurrencyExchange.png) | ![Transactions](screenshots/03-transactions_CurrencyExchange.png) |
 
 ## 02 – ATM Simulator
 
