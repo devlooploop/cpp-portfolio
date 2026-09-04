@@ -31,7 +31,7 @@ This repository contains **four C++ projects**, including a comprehensive **Curr
 - Console application development
 - Modular programming
 
-📁 Repository Structure
+## 📁 Repository Structure
 
 ```text
 CPP-Projects/
@@ -114,26 +114,27 @@ Note: These credentials are provided for demonstration purposes for this portfol
 - Manage user permissions
 - Control access to system functions
 
-📋 Logging
+### 📋 Logging
 
 The application maintains records related to system activity and transactions.
 
-Login register/history
-Transfer history
-Date and time records
-Source account information
-Destination account information
-Transaction amounts
-Account balances
-User responsible for operations
-📂 Data Files
+- Login register/history
+- Transfer history
+- Date and time records
+- Source account information
+- Destination account information
+- Transaction amounts
+- Account balances
+- User responsible for operations
+
+### 📂 Data Files
 
 The project uses text files for persistent data:
 
-Currencies.txt
-LoginRegister.txt
-TransfersLog.txt
-Users.txt
+- `Currencies.txt`
+- `LoginRegister.txt`
+- `TransfersLog.txt`
+- `Users.txt`
 
 🧠 Technical Concepts
 C++
