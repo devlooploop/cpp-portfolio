@@ -205,9 +205,11 @@ Note: These credentials are provided for demonstration purposes for this portfol
 
 ### 📂 Project Files: ATM-Simulator
 
+```text
 02-ATM-Simulator-cpp/
 ├── ATMSimulator.slnx
 └── Clients.txt
+```
 
 ### 🧠 Technical Concepts: ATM-Simulator
 
@@ -260,10 +262,12 @@ The computer generates a random choice, and the application determines the winne
 
 ### 📂 Project Files: Rock-Paper-Scissors
 
+```text
 03-Rock-Paper-Scissors-cpp/
 └── RockPaperScissors.cpp
+```
 
-### 📸 Screenshots : Rock-Paper-Scissors
+### 📸 Screenshots: Rock-Paper-Scissors
 
 ![Welcome Screen Stone Paper Scissors](CPP-Projects/Screenshots/07-Welcome_Screen_Stone_Paper_Scissors.png)
 ![How Many Rounds Screen Stone Paper Scissors](CPP-Projects/Screenshots/08-How_Many_Rounds_ScreenStonePaperScissors.png)
@@ -278,111 +282,140 @@ An interactive console-based mathematics quiz game with multiple difficulty leve
 
 Players can select the number of questions and choose between different difficulty levels and operations.
 
-🎯 Features
-Select the number of questions
-Easy difficulty
-Medium difficulty
-Hard difficulty
-Mixed difficulty
-Addition
-Subtraction
-Multiplication
-Division
-Mixed operations
-Randomly generated questions
-Automatic score calculation
-Correct / incorrect answer detection
-Pass / Fail result
-Replay functionality
-Visual feedback
-🧠 Technical Concepts
-C++
-Functions
-Enumerations
-Loops
-Conditional statements
-Random number generation
-Arithmetic operations
-Input validation
-Score calculation
-Game logic
-Console applications
-📂 Project Files
+### 🎯 Features: Math Quiz Game
+
+- Select the number of questions
+- Easy difficulty
+- Medium difficulty
+- Hard difficulty
+- Mixed difficulty
+- Addition
+- Subtraction
+- Multiplication
+- Division
+- Mixed operations
+- Randomly generated questions
+- Automatic score calculation
+- Correct and incorrect answer detection
+- Pass or fail result
+- Replay functionality
+- Visual feedback
+
+### 🧠 Technical Concepts: Math Quiz Game
+
+- C++
+- Functions
+- Enumerations
+- Loops
+- Conditional statements
+- Random number generation
+- Arithmetic operations
+- Input validation
+- Score calculation
+- Game logic
+- Console applications
+
+### 📂 Project Files: Math Quiz Game
+
+```text
 04-Math-Quiz-Game-cpp/
 └── MathQuizGame.cpp
+```
 
-📸 Screenshots
+### 📸 Screenshots: Math Quiz Game
 
-Screenshots will be added here.
+![Welcome Screen Math Game](CPP-Projects/Screenshots/13-Welcome-Screen_MathGame.png)
+![Right Answer Screen Math Game](CPP-Projects/Screenshots/14-Right-Answer-Screen_MathGame.png)
+![Wrong Answer Screen Math Game](CPP-Projects/Screenshots/15-Wrong-Answer-Screen_MathGame.png)
 
-Suggested screenshots:
+## 🛠️ How to Run
 
-🛠️ How to Run
-Visual Studio 2022
+### Visual Studio 2022
 
 The projects can be compiled and run using Visual Studio 2022 with the required C++ development tools installed.
 
-Steps
-Clone or download this repository.
-Open the desired project in Visual Studio.
-Make sure the Desktop development with C++ workload is installed.
-Select the desired project.
-Build the project.
-Run the application.
-For projects requiring authentication, use the demo credentials provided in the corresponding project section.
-Using g++
+#### Steps
 
-Individual .cpp files can also be compiled using g++.
+1. Clone or download this repository.
+2. Open the desired `.slnx` project in Visual Studio 2022.
+3. Make sure the **Desktop development with C++** workload is installed.
+4. Select the desired project.
+5. Build the project.
+6. Run the application.
+7. For projects requiring authentication, use the demo credentials provided in the corresponding project section.
 
-Rock Paper Scissors
+### Using g++
+
+Individual `.cpp` files can also be compiled using `g++`.
+
+#### Rock Paper Scissors
+
+```bash
 g++ RockPaperScissors.cpp -o RockPaperScissors
 ./RockPaperScissors
+```
 
-Math Quiz Game
+#### Math Quiz Game
+
+```bash
 g++ MathQuizGame.cpp -o MathQuizGame
 ./MathQuizGame
+```
 
-ATM Simulator
+#### ATM Simulator
+
+```bash
 g++ ATMSimulator.cpp -o ATMSimulator
 ./ATMSimulator
+```
 
-For the Currency Exchange & Bank Management project, compile the required .cpp source files together.
+For the **Currency Exchange & Bank Management** project, compile the required `.cpp` source files together.
 
-📚 Skills Demonstrated
+## 📚 Skills Demonstrated
 
 These projects demonstrate practical experience with:
 
-C++
-Object-Oriented Programming
-Classes and objects
-Encapsulation
-Inheritance
-Structures
-Functions
-Vectors
-Enumerations
-File handling
-Data persistence
-User authentication
-Authorization
-Permissions and access control
-Banking transactions
-Currency conversion
-Input validation
-Error handling
-Random number generation
-Game development
-Menu-driven applications
-Console application design
-Modular programming
-📸 Project Screenshots
+- C++
+- Object-Oriented Programming (OOP)
+- Classes and objects
+- Encapsulation
+- Inheritance
+- Structures
+- Functions
+- Vectors
+- Enumerations
+- File I/O
+- Data persistence
+- User authentication
+- Authorization
+- Permissions and access control
+- Banking transactions
+- Currency conversion
+- Input validation
+- Error handling
+- Random number generation
+- Game development
+- Menu-driven applications
+- Console application design
+- Modular programming
 
-Screenshots will be added to demonstrate the functionality and user interfaces of each project.
+## 📸 Project Screenshots
 
-📜 License
+Screenshots demonstrate the functionality and user interfaces of the projects, including:
+
+- Authentication and login
+- Main menus
+- Banking operations
+- Currency exchange
+- ATM operations
+- Rock Paper Scissors gameplay
+- Math quiz questions
+- Results and application output
+
+## 📜 License
 
 This project is released under the MIT License.
 
-See the LICENSE file for more details.
+See the `LICENSE` file for more details.
 
 ⭐ If you find this portfolio useful, feel free to star the repository.
