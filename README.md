@@ -172,7 +172,7 @@ The project uses text files for persistent data:
 ![Transactions](CPP-Projects/Screenshots/03-transactions_CurrencyExchange.png)
 ![Manage Users](CPP-Projects/Screenshots/04-manage-users_CurrencyExchange.png)
 ![login Register](CPP-Projects/Screenshots/05-loginRegister_CurrencyExchange.png)
-![Currency Exchange Main Screen](CPP-Projects/Screenshots/06-Currency-Exchange-Main-Screen)
+![Currency Exchange Main Screen](CPP-Projects/Screenshots/06-Currency-Exchange-Main-Screen.png)
 
 ## 02 – ATM Simulator
 
