@@ -171,10 +171,6 @@ The project uses text files for persistent data:
 | --- | --- | --- |
 | ![Bank Login](screenshots/01-login_CurrencyExchange.png) | ![Main Menu](screenshots/02-main-menu_client-management_CurrencyExchange.png) | ![Transactions](screenshots/03-transactions_CurrencyExchange.png) |
 
-| Currency Exchange | Transfer |
-| --- | --- |
-| ![Currency Exchange](screenshots/currency-exchange.png) | ![Transfer](screenshots/transfer.png) |
-
 ## 02 – ATM Simulator
 
 A console-based ATM simulation system that provides common ATM operations through an interactive menu-driven interface.
