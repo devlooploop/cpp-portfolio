@@ -55,6 +55,9 @@ CPP-Projects/
 ├── 04-Math-Quiz-Game-cpp/
 │   └── MathQuizGame.slnx
 │
+├── screenshots/
+│   └── *.png
+│
 ├── README.md
 └── LICENSE
 ```
@@ -161,7 +164,7 @@ The project uses text files for persistent data:
 - Menu-driven console applications
 
 📸 Screenshots
-Screenshots will be added here.
+
 
 ## 02 – ATM Simulator
 
