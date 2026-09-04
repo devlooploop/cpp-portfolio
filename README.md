@@ -1,8 +1,39 @@
-# C++ Portfolio
+# 💻 C++ Portfolio
 
-A collection of C++ projects demonstrating practical programming, problem-solving, file handling, data persistence, authentication, transaction processing, and console application development.
+> A collection of C++ projects focused on practical programming, problem-solving, Object-Oriented Programming, file handling, data persistence, authentication, transaction processing, and console application development.
 
-This repository contains four C++ projects, including a comprehensive Currency Exchange & Bank Management System, an ATM Simulator, and two console-based games.
+This repository contains **four C++ projects**, including a comprehensive **Currency Exchange & Bank Management System**, an **ATM Simulator**, and two **console-based games**.
+
+## 🛠️ Technologies and Skills
+
+![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+
+![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91?style=for-the-badge&logo=visual-studio&logoColor=white)
+
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+
+- C++
+- Object-Oriented Programming
+- Classes and objects
+- Encapsulation
+- Inheritance
+- Structures
+- Enumerations
+- Vectors
+- File I/O
+- Data persistence
+- Authentication
+- Authorization
+- Permissions and access control
+- Input validation
+- Error handling
+- Transaction processing
+- Currency conversion
+- Random number generation
+- Console application development
+- Modular programming
 
 📁 Repository Structure
 
