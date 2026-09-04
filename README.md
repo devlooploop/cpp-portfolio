@@ -6,6 +6,7 @@ This repository contains four C++ projects, including a comprehensive Currency E
 
 📁 Repository Structure
 
+```text
 CPP-Projects/
 │
 ├── 01-CurrencyExchange-Bank-Management-cpp/
@@ -29,8 +30,9 @@ CPP-Projects/
 │
 ├── README.md
 └── LICENSE
+```
 
-🚀 Projects
+## 🚀 Projects
 
 ## 01 – Currency Exchange & Bank Management
 
