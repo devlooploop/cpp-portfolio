@@ -229,6 +229,7 @@ Note: These credentials are provided for demonstration purposes for this portfol
 ### 📸 Screenshots
 
 #### ATM Simulator
+
 ![ATM Main Menu Screen](CPP-Projects/Screenshots/06-ATM_Main_Menu_Screen.png)
 
 ## 03 – Rock Paper Scissors
