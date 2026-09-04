@@ -43,8 +43,9 @@ The application uses a modular architecture with multiple C++ source and header 
 ### 🔐 Login Credentials
 
 Use the following credentials to log in:
-Username: admin
-PIN/Password: 1234
+
+- Username: admin
+- PIN/Password: 1234
 
 Note: These credentials are provided for demonstration purposes for this portfolio project.
 
