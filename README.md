@@ -170,7 +170,8 @@ The project uses text files for persistent data:
 ![Bank Login](CPP-Projects/Screenshots/01-login_CurrencyExchange.png)  
 ![Main Menu](CPP-Projects/Screenshots/02-main-menu_client-management_CurrencyExchange.png)  
 ![Transactions](CPP-Projects/Screenshots/03-transactions_CurrencyExchange.png)
-![Transactions](CPP-Projects/Screenshots/04-manage-users_CurrencyExchange.pngk)
+![Manage Users](CPP-Projects/Screenshots/04-manage-users_CurrencyExchange.png)
+![login Register](CPP-Projects/Screenshots/05-loginRegister_CurrencyExchange.png)
 
 ## 02 – ATM Simulator
 
@@ -178,80 +179,93 @@ A console-based ATM simulation system that provides common ATM operations throug
 
 The application uses client information stored in Clients.txt and simulates common ATM operations.
 
-🔐 Login Credentials
+### 🔐 ATM Login Credentials
 
 Use the following credentials to log in:
-Account Number: a1
-PIN/Password: 1234
+
+- **Account Number:** `a1`
+- **PIN / Password:** `1234`
 
 Note: These credentials are provided for demonstration purposes for this portfolio project.
 
-💳 ATM Operations
-Account number authentication
-PIN authentication
-Quick withdrawal
-Normal withdrawal
-Deposit
-Balance checking
-Logout functionality
-Persistent client data
-Input validation
-Balance verification
-Transaction processing
-Menu-driven interface
-📂 Project Files
+### 💳 ATM Operations
+
+- Account number authentication
+- PIN authentication
+- Quick withdrawal
+- Normal withdrawal
+- Deposit
+- Balance checking
+- Logout functionality
+- Persistent client data
+- Input validation
+- Balance verification
+- Transaction processing
+- Menu-driven interface
+
+### 📂 Project Files
+
+```text
 02-ATM-Simulator-cpp/
-├── ATMSimulator..slnx
+├── ATMSimulator.slnx
 └── Clients.txt
 
-🧠 Technical Concepts
-C++
-File I/O
-Data persistence
-Input validation
-Balance validation
-Transaction processing
-Functions
-Structures
-Vectors
-Conditional statements
-Loops
-Menu-driven applications
-Console user interfaces
-📸 Screenshots
+### 🧠 Technical Concepts
 
-Screenshots will be added here.
+- C++
+- File I/O
+- Data persistence
+- Input validation
+- Balance validation
+- Transaction processing
+- Functions
+- Structures
+- Vectors
+- Conditional statements
+- Loops
+- Menu-driven applications
+- Console user interfaces
+
+### 📸 Screenshots
+
+#### ATM Simulator
+![ATM Main Menu Screen](CPP-Projects/Screenshots/06-ATM_Main_Menu_Screen.png)
 
 ## 03 – Rock Paper Scissors
 
 A classic console-based Rock-Paper-Scissors game where the player competes against the computer.
 
-The computer generates a random choice and the application determines the winner based on the selected moves.
+The computer generates a random choice, and the application determines the winner based on the selected moves.
 
-🎮 Features
-Player vs Computer gameplay
-Random computer choices
-Player input
-Input validation
-Win / Lose / Draw detection
-Score tracking
-Game result display
-Play-again functionality
-🧠 Technical Concepts
-C++
-Functions
-Enumerations
-Conditional statements
-Loops
-Random number generation
-Input validation
-Game logic
-Console output
-📂 Project Files
+### 🎮 Features
+
+- Player versus computer gameplay
+- Random computer choices
+- Player input
+- Input validation
+- Win, lose, and draw detection
+- Score tracking
+- Game result display
+- Play-again functionality
+
+### 🧠 Technical Concepts
+
+- C++
+- Functions
+- Enumerations
+- Conditional statements
+- Loops
+- Random number generation
+- Input validation
+- Game logic
+- Console output
+
+### 📂 Project Files
+
+```text
 03-Rock-Paper-Scissors-cpp/
 └── RockPaperScissors.cpp
 
-📸 Screenshots
 
 Screenshots will be added here.
 
