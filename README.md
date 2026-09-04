@@ -1,6 +1,8 @@
 # 💻 C++ Portfolio
 
-> A collection of C++ projects focused on practical programming, problem-solving, Object-Oriented Programming, file handling, data persistence, authentication, transaction processing, and console application development.
+## A Collection of C++ Projects
+
+A portfolio of practical C++ projects demonstrating **Object-Oriented Programming, file handling, data persistence, authentication, transaction processing, and console application development**.
 
 This repository contains **four C++ projects**, including a comprehensive **Currency Exchange & Bank Management System**, an **ATM Simulator**, and two **console-based games**.
 
