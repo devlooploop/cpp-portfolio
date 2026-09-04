@@ -6,9 +6,9 @@
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-A collection of **C++ projects** demonstrating practical programming and application development skills.
+A collection of C++ projects demonstrating practical programming, problem-solving, file handling, data persistence, authentication, and console application development.
 
-The repository includes projects ranging from **banking management systems and transaction processing applications** to smaller programming exercises and console-based games.
+The repository contains four C++ projects, ranging from a comprehensive Currency Exchange & Bank Management System and an ATM Simulator to console-based games.
 
 The projects demonstrate concepts such as **Object-Oriented Programming (OOP), file I/O, data persistence, data structures, user authentication, permissions, transaction processing, input validation, error handling, and menu-driven application design**.
 
@@ -19,40 +19,28 @@ The projects demonstrate concepts such as **Object-Oriented Programming (OOP), f
 ```text
 CPP-Projects/
 
-├── 01-CurrencyExchange-Bank-Management/
+├── 01-CurrencyExchange-Bank-Management-cpp/
 │   ├── *.cpp
 │   ├── *.h
-│   ├── Clients.txt
+│   ├── Currencies.txt
+│   ├── LoginRegister.txt
+│   ├── TransfersLog.txt
 │   └── Users.txt
-├── 01-Bank-Management-System-cpp/
-│   ├── *.cpp
-│   ├── *.h
-│   ├── Clients.txt
-│   └── Users.txt
-│   
+│
 │
 ├── 02-ATM-Simulator-cpp/
 │   ├── ATMSimulator.cpp
 │   └── Clients.txt
 │
-├── 03-Bank-Project-2-Extension-cpp/
-│   ├── BankSystemWithTransactions.cpp
-│   └── Clients.txt
 │
-├── 04-Bank-Management-System-With-Users-cpp/
-│   ├── BankManagementSystem_WithUsers.cpp
-│   ├── Users.txt
-│   └── Clients.txt
-│
-├── 05-Rock-Paper-Scissors-cpp/
+├── 03-Rock-Paper-Scissors-cpp/
+│   │
 │   └── RockPaperScissors.cpp
 │
-├── 06-Math-Quiz-Game-cpp/
+│
+├── 04-Math-Quiz-Game-cpp/
 │   └── MathQuizGame.cpp
 │
-├── 07-Bank-Clients-Management-cpp/
-│   ├── BankClientsManagement.cpp
-│   └── Clients.txt
 │
 ├── README.md
 └── LICENSE

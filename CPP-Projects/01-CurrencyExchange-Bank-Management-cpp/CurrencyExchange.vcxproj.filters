@@ -150,6 +150,9 @@
     <Text Include="clsMainScreen.h">
       <Filter>Header Files\Screen</Filter>
     </Text>
+    <Text Include="TransfersLog.txt">
+      <Filter>Data</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <None Include="clsCurrencyExchangeMainScreen.h">

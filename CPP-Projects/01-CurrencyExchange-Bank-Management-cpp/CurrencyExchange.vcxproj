@@ -179,6 +179,7 @@
     <Text Include="clsMainScreen.h" />
     <Text Include="Currencies.txt" />
     <Text Include="LoginRegister.txt" />
+    <Text Include="TransfersLog.txt" />
     <Text Include="Users.txt" />
   </ItemGroup>
   <ItemGroup>
