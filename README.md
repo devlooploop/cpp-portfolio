@@ -40,7 +40,7 @@ A comprehensive C++ banking management system combining client management, banki
 
 The application uses a modular architecture with multiple C++ source and header files to separate responsibilities and organize the system.
 
-🔐 Login Credentials
+### 🔐 Login Credentials
 
 Use the following credentials to log in:
 Username: admin
