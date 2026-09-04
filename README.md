@@ -139,7 +139,7 @@ The project uses text files for persistent data:
 - `TransfersLog.txt`
 - `Users.txt`
 
-### 🧠 Technical Concepts
+### 🧠 Technical Concepts: Currency Exchange and Bank Management
 
 - C++
 - Object-Oriented Programming (OOP)
@@ -205,12 +205,11 @@ Note: These credentials are provided for demonstration purposes for this portfol
 
 ### 📂 Project Files
 
-```text
 02-ATM-Simulator-cpp/
 ├── ATMSimulator.slnx
 └── Clients.txt
 
-### 🧠 Technical Concepts
+### 🧠 Technical Concepts: ATM-Simulator
 
 - C++
 - File I/O
@@ -226,9 +225,7 @@ Note: These credentials are provided for demonstration purposes for this portfol
 - Menu-driven applications
 - Console user interfaces
 
-### 📸 Screenshots
-
-#### ATM Simulator
+### 📸 Screenshots: ATM Simulator
 
 ![ATM Main Menu Screen](CPP-Projects/Screenshots/06-ATM_Main_Menu_Screen.png)
 
