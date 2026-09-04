@@ -163,8 +163,17 @@ The project uses text files for persistent data:
 - Modular application design
 - Menu-driven console applications
 
-📸 Screenshots
+### 📸 Screenshots
 
+#### Currency Exchange and Bank Management
+
+| Bank Login | Bank Main Menu | Transactions |
+| --- | --- | --- |
+| ![Bank Login](screenshots/01-login_CurrencyExchange.png) | ![Main Menu](screenshots/02-main-menu_client-management_CurrencyExchange.png) | ![Transactions](screenshots/03-transactions_CurrencyExchange.png) |
+
+| Currency Exchange | Transfer |
+| --- | --- |
+| ![Currency Exchange](screenshots/currency-exchange.png) | ![Transfer](screenshots/transfer.png) |
 
 ## 02 – ATM Simulator
 
