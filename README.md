@@ -49,36 +49,44 @@ Use the following credentials to log in:
 
 Note: These credentials are provided for demonstration purposes for this portfolio project.
 
-👥 Client Management
-List clients
-Add new clients
-Delete clients
-Update client information
-Find clients
-Validate account numbers
-Store client information persistently
-💰 Banking Transactions
-Deposit money
-Withdraw money
-Transfer money between accounts
-Validate account balances
-Confirm transactions
-Update account balances
-Record transfer history
-💱 Currency Exchange
-View supported currencies
-Search for currencies
-Convert between currencies
-Use exchange rates
-Perform currency calculations
-👤 User Management
-List users
-Add users
-Delete users
-Update users
-Find users
-Manage user permissions
-Control access to system functions
+### 👥 Client Management
+
+- List clients
+- Add new clients
+- Delete clients
+- Update client information
+- Find clients
+- Validate account numbers
+- Store client information persistently
+
+### 💰Banking Transactions
+
+- Deposit money
+- Withdraw money
+- Transfer money between accounts
+- Validate account balances
+- Confirm transactions
+- Update account balances
+- Record transfer history
+
+### 💱 Currency Exchange
+
+- View supported currencies
+- Search for currencies
+- Convert between currencies
+- Use exchange rates
+- Perform currency calculations
+
+### 👤 User Management
+
+- List users
+- Add users
+- Delete users
+- Update users
+- Find users
+- Manage user permissions
+- Control access to system functions
+
 📋 Logging
 
 The application maintains records related to system activity and transactions.
