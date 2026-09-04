@@ -136,28 +136,29 @@ The project uses text files for persistent data:
 - `TransfersLog.txt`
 - `Users.txt`
 
-🧠 Technical Concepts
-C++
-Object-Oriented Programming (OOP)
-Classes and objects
-Encapsulation
-Inheritance
-Static members and methods
-Structures
-Enumerations
-Vectors
-File I/O
-Data persistence
-User authentication
-Authorization
-Permissions
-Bitwise operations
-Input validation
-Error handling
-Transaction processing
-Currency conversion
-Modular application design
-Menu-driven console applications
+### 🧠 Technical Concepts
+
+- C++
+- Object-Oriented Programming (OOP)
+- Classes and objects
+- Encapsulation
+- Inheritance
+- Static members and methods
+- Structures
+- Enumerations
+- Vectors
+- File I/O
+- Data persistence
+- User authentication
+- Authorization
+- Permissions
+- Bitwise operations
+- Input validation
+- Error handling
+- Transaction processing
+- Currency conversion
+- Modular application design
+- Menu-driven console applications
 
 📸 Screenshots
 Screenshots will be added here.
