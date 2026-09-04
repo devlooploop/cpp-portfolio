@@ -167,9 +167,9 @@ The project uses text files for persistent data:
 
 #### Currency Exchange and Bank Management
 
-| ![Bank Login](CPP-Projects/Screenshots/01-login_CurrencyExchange.png)  
-| ![Main Menu](CPP-Projects/Screenshots/02-main-menu_client-management_CurrencyExchange.png)  
-| ![Transactions](CPP-Projects/Screenshots/03-transactions_CurrencyExchange.png)
+![Bank Login](CPP-Projects/Screenshots/01-login_CurrencyExchange.png)  
+![Main Menu](CPP-Projects/Screenshots/02-main-menu_client-management_CurrencyExchange.png)  
+![Transactions](CPP-Projects/Screenshots/03-transactions_CurrencyExchange.png)
 
 ## 02 – ATM Simulator
 
@@ -181,7 +181,7 @@ The application uses client information stored in Clients.txt and simulates comm
 
 Use the following credentials to log in:
 Account Number: a1
-PIN / Password: 1234
+PIN/Password: 1234
 
 Note: These credentials are provided for demonstration purposes for this portfolio project.
 
