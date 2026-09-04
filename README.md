@@ -203,7 +203,7 @@ Note: These credentials are provided for demonstration purposes for this portfol
 - Transaction processing
 - Menu-driven interface
 
-### 📂 Project Files
+### 📂 Project Files: ATM-Simulator
 
 02-ATM-Simulator-cpp/
 ├── ATMSimulator.slnx
@@ -246,7 +246,7 @@ The computer generates a random choice, and the application determines the winne
 - Game result display
 - Play-again functionality
 
-### 🧠 Technical Concepts
+### 🧠 Technical Concepts: Rock Paper Scissors
 
 - C++
 - Functions
@@ -258,14 +258,19 @@ The computer generates a random choice, and the application determines the winne
 - Game logic
 - Console output
 
-### 📂 Project Files
+### 📂 Project Files: Rock-Paper-Scissors
 
-```text
 03-Rock-Paper-Scissors-cpp/
 └── RockPaperScissors.cpp
 
+### 📸 Screenshots : Rock-Paper-Scissors
 
-Screenshots will be added here.
+![Welcome Screen Stone Paper Scissors](CPP-Projects/Screenshots/07-Welcome_Screen_Stone_Paper_Scissors.png)
+![How Many Rounds Screen Stone Paper Scissors](CPP-Projects/Screenshots/08-How_Many_Rounds_ScreenStonePaperScissors.png)
+![Winner Screen Stone Paper Scissors](CPP-Projects/Screenshots/09-Winner_Screen__ScreenStonePaperScissors.png)
+![Draw Screen Stone Paper Scissors](CPP-Projects/Screenshots/10-Draw_Screen__ScreenStonePaperScissors.png)
+![Computer Wins Screen Stone Paper Scissors](CPP-Projects/Screenshots/11-Computer_Wins_Screen__ScreenStonePaperScissors.png)
+![Game Result Screen Stone Paper Scissors](CPP-Projects/Screenshots/12-Game_Result_Screen__ScreenStonePaperScissors.png)
 
 ## 04 – Math Quiz Game
 
