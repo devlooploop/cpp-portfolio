@@ -1,6 +1,7 @@
-# ========================================
-# 📦 Build output (Visual Studio C++ / MSVC)
-# ========================================
+# ============================================================
+# 📦 C++ / MSVC / Visual Studio Build Output
+# ============================================================
+
 Debug/
 Release/
 x64/
@@ -12,7 +13,9 @@ build/
 bin/
 obj/
 
-# Ignore generated files like .exe, .dll, .pdb, .lib, etc.
+.vs/
+
+# C/C++ compiled binaries and intermediate files
 *.exe
 *.dll
 *.pdb
@@ -22,65 +25,434 @@ obj/
 *.idb
 *.iobj
 *.ipdb
+*.obj
+*.pch
+*.res
+*.sbr
+*.tlog
+*.lastbuildstate
+*.VC.db
+*.VC.VC.opendb
 
-# ========================================
-# 🛠️ Visual Studio user/machine-specific files
-# ========================================
-.vs/
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
+# Static analysis / profiling / coverage
+*.binlog
+*.coverage
+*.coveragexml
 
-# ========================================
-# 🔧 Visual Studio cache files
-# ========================================
+
+# ============================================================
+# 🟦 C# / .NET Build Output
+# ============================================================
+
+# Build folders
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+ARM/
+ARM64/
+
+# .NET generated files
+*.dll
+*.exe
+*.pdb
 *.cache
-*.db
-*.opendb
+*.ilk
+*.nupkg
+*.snupkg
 
-# ========================================
-# 🔐 Environment files
-# ========================================
-.env
-.env.*
+# Publish output
+publish/
+[Pp]ublish/
 
-# ========================================
-# 📦 NuGet (rare for C++, but safe to keep)
-# ========================================
+# Test results
+TestResults/
+[Tt]est[Rr]esults/
+*.trx
+*.coverage
+*.coveragexml
+
+# NuGet
 packages/
 *.nupkg
 *.snupkg
 project.lock.json
 project.fragment.lock.json
 
-# ========================================
-# 📄 OS-specific junk files
-# ========================================
-.DS_Store
-Thumbs.db
-ehthumbs.db
-Desktop.ini
+# .NET generated files
+*.deps.json
+*.runtimeconfig.json
 
-# ========================================
-# 🧪 Test Results
-# ========================================
+
+# ============================================================
+# 🛠️ Visual Studio User / Machine-Specific Files
+# ============================================================
+
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+# Visual Studio temporary files
+*.VC.db
+*.VC.VC.opendb
+*.opensdf
+*.sdf
+
+
+# ============================================================
+# 🔧 Visual Studio / IDE Cache
+# ============================================================
+
+*.cache
+*.db
+*.opendb
+*.tmp
+*.bak
+
+# IntelliSense
+ipch/
+*.VC.db
+*.VC.VC.opendb
+
+
+# ============================================================
+# 🧰 JetBrains Rider / CLion / ReSharper
+# ============================================================
+
+.idea/
+*.sln.iml
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+
+# ============================================================
+# 🔐 Environment / Secrets / Credentials
+# ============================================================
+
+# Environment variables
+.env
+.env.*
+!.env.example
+!.env.template
+
+# Local configuration
+appsettings.Local.json
+appsettings.local.json
+appsettings.*.Local.json
+appsettings.*.local.json
+
+# User-specific configuration
+secrets.json
+secrets.local.json
+local.settings.json
+
+# Generic secret/config files
+*.secret
+*.secrets
+*.secret.json
+*.secrets.json
+
+# Certificates / private keys
+*.pfx
+*.p12
+*.pem
+*.key
+*.crt
+*.cer
+
+# SSH keys
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+
+# Cloud / service credentials
+credentials.json
+service-account.json
+serviceAccount.json
+
+# Azure local settings
+azureSettings.json
+
+# Firebase / Google service credentials
+google-services.json
+firebase-debug.log
+
+# User-specific local config
+*.local.json
+*.local.config
+
+
+# ============================================================
+# 🔑 Authentication / Tokens / API Keys
+# ============================================================
+
+# Common local credential files
+credentials/
+secrets/
+.secret/
+.secrets/
+
+# Token files
+*.token
+*.tokens
+
+# JWT / authentication dumps
+*.jwt
+
+# Local development certificates
+*.devcert
+*.development.json
+
+
+# ============================================================
+# 🗄️ Databases / Local Data
+# ============================================================
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+*.mdb
+*.ldb
+
+# Local database folders
+database/
+databases/
+data/
+
+# Database backups
+*.bak
+*.backup
+*.dump
+
+
+# ============================================================
+# 📝 Logs / Diagnostics
+# ============================================================
+
+*.log
+logs/
+[Ll]og/
+[Ll]ogs/
+
+# Crash dumps
+*.dmp
+*.mdmp
+
+# Diagnostic traces
+*.trace
+*.etl
+
+
+# ============================================================
+# 🧪 Testing / Coverage
+# ============================================================
+
 TestResults/
+test-results/
+coverage/
+Coverage/
 *.trx
 *.coverage
 *.coveragexml
+*.opencover.xml
 
-# ========================================
-# 🔧 JetBrains Rider / CLion
-# ========================================
-.idea/
 
-# ========================================
-# 🧰 Others
-# ========================================
-*.bak
+# ============================================================
+# 📦 Generated / Temporary Files
+# ============================================================
+
 *.tmp
-*.log
-[Ll]og/
-[Ll]ogs/
+*.temp
+*.swp
+*.swo
+*.orig
+*.rej
+*.old
+*.backup
+*.bak
+*.pid
+
+# Temporary folders
+tmp/
+temp/
+.tmp/
+
+
+# ============================================================
+# 🖥️ OS-Specific Junk
+# ============================================================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.directory
+
+
+# ============================================================
+# 📦 NuGet / Package Manager
+# ============================================================
+
+packages/
+*.nupkg
+*.snupkg
+
+# NuGet cache / generated files
+.nuget/
+*.nuget.props
+*.nuget.targets
+
+
+# ============================================================
+# 🧰 CMake
+# ============================================================
+
+CMakeFiles/
+CMakeCache.txt
+cmake-build-*/
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+
+# CMake generated files
+compile_commands.json
+
+
+# ============================================================
+# 🔨 Build Systems
+# ============================================================
+
+.vscode/
+build/
+out/
+dist/
+artifacts/
+
+# MSBuild generated files
+*.binlog
+
+
+# ============================================================
+# 🧹 Code Analysis / Tooling
+# ============================================================
+
+.vsconfig
+*.code-workspace
+
+# Sonar / static analysis
+.sonarqube/
+sonar-project.properties.user
+
+
+# ============================================================
+# 🧪 Test / Scratch Files
+# ============================================================
+
+# Personal test files — remove these rules if they are part
+# of the actual source code.
 test.cpp
+test.c
+test.cs
+
+# Common scratch files
+scratch/
+sandbox/
+
+
+# ============================================================
+# 📄 Documentation / Generated Files
+# ============================================================
+
+# Generated documentation
+docs/_build/
+site/
+
+# Generated API documentation
+Doxygen/
+doxygen/
+
+
+# ============================================================
+# 🚀 Publish / Deployment
+# ============================================================
+
+publish/
+Publish/
+artifacts/
+
+# Deployment packages
+*.zip
+*.tar
+*.tar.gz
+
+
+# ============================================================
+# 🧑‍💻 Local Developer Files
+# ============================================================
+
+# Personal notes / TODO files
+.local/
+.local.*
+*.local
+
+# Personal scripts/config
+local/
+developer/
+dev-local/
+
+# OS/editor backup files
+*.orig
+*.save
+*.swp
+*.swo
+
+
+# ============================================================
+# 🔒 Sensitive User-Specific Files
+# ============================================================
+
+# Personal configuration
+user.config
+user-settings.json
+settings.local.json
+
+# History / command data
+*.history
+
+# Crash / diagnostic dumps
+crash/
+crashes/
+dumps/
+
+# Local credentials directories
+.credentials/
+.credentials/
+.auth/
+.auth-local/
+
+
+# ============================================================
+# ⚠️ IMPORTANT
+# ============================================================
+
+# Never commit private keys, certificates, passwords,
+# API keys, tokens, database dumps, or local environment files.
